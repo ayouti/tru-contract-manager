@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE production.received_contracts\nSET \n  first_reviewed_by = {{appsmith.user.email}},\n  locked_at = NOW(),\n  status = 'IN_PROGRESS_1ST'\nWHERE loan_application_id = (\n  SELECT loan_application_id \n  FROM production.received_contracts\n  WHERE status = 'PENDING_1ST_REVIEW' \n    AND (locked_at IS NULL OR locked_at < NOW() - INTERVAL '15 minutes')\n  ORDER BY approval_date ASC \n  LIMIT 1\n  FOR UPDATE SKIP LOCKED\n)\nRETURNING *;",
+      "body": "UPDATE production.received_contracts\nSET\n  first_reviewed_by = {{appsmith.user.email}},\n  locked_at = NOW(),\n  status = 'IN_PROGRESS_1ST'\nWHERE loan_application_id = (\n  SELECT loan_application_id\n  FROM production.received_contracts\n  WHERE status = 'PENDING_1ST_REVIEW'\n    AND (locked_at IS NULL OR locked_at < NOW() - INTERVAL '15 minutes')\n  ORDER BY approval_date ASC\n  LIMIT 1\n  FOR UPDATE SKIP LOCKED\n)\nRETURNING *;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
