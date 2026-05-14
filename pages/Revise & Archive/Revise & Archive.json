@@ -1,0 +1,33 @@
+{
+  "gitSyncId": "6904abf885bff76d9e2e3f75_ba88fc02-77d3-44b9-8110-9856acb9f610",
+  "unpublishedPage": {
+    "customSlug": "archive",
+    "isHidden": false,
+    "layouts": [
+      {
+        "dsl": {
+          "backgroundColor": "none",
+          "bottomRow": 680,
+          "canExtend": true,
+          "containerStyle": "none",
+          "detachFromLayout": true,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0,
+          "minHeight": 590,
+          "parentColumnSpace": 1,
+          "parentRowSpace": 1,
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "snapRows": 57,
+          "topRow": 0,
+          "type": "CANVAS_WIDGET",
+          "version": 94,
+          "widgetId": "0",
+          "widgetName": "MainContainer"
+        }
+      }
+    ],
+    "name": "Revise & Archive",
+    "slug": "revise-archive"
+  }
+}

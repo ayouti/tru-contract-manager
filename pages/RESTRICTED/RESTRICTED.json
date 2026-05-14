@@ -1,0 +1,32 @@
+{
+  "gitSyncId": "6904abf885bff76d9e2e3f75_993d0472-90ba-4ba5-91bf-782403acb162",
+  "unpublishedPage": {
+    "isHidden": true,
+    "layouts": [
+      {
+        "dsl": {
+          "backgroundColor": "none",
+          "bottomRow": 380,
+          "canExtend": true,
+          "containerStyle": "none",
+          "detachFromLayout": true,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0,
+          "minHeight": 640,
+          "parentColumnSpace": 1,
+          "parentRowSpace": 1,
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "snapRows": 62,
+          "topRow": 0,
+          "type": "CANVAS_WIDGET",
+          "version": 94,
+          "widgetId": "0",
+          "widgetName": "MainContainer"
+        }
+      }
+    ],
+    "name": "RESTRICTED",
+    "slug": "restricted"
+  }
+}

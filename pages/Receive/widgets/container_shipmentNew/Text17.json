@@ -1,0 +1,62 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "disableLink": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": "{{ !!get_daily_stats.data && !get_daily_stats.isLoading }}",
+  "key": "j320dnd7tp",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 79,
+  "mobileLeftColumn": 6,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 75,
+  "needsErrorInfo": false,
+  "overflow": "NONE",
+  "parentColumnSpace": 11.6875,
+  "parentId": "d9bsc9avum",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 16,
+  "shouldTruncate": false,
+  "text": "<span style=\"font-size: 3rem\">{{get_daily_stats.data.find(row => row.received_by === appsmith.user.email)?.total || 0 }}</span>\nContract{{get_daily_stats.data.find(row => row.received_by === appsmith.user.email)?.total===1 ? '' : 's'}} Received Today",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 0,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "oeaezvuq30",
+  "widgetName": "Text17"
+}

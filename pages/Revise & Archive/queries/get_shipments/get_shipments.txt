@@ -1,0 +1,13 @@
+SELECT 
+    TO_CHAR(MIN(shipment_received_date), 'YYYY-MM-DD') AS shipment_date,
+    shipment_number,
+    drawer_number,
+    COUNT(shipment_number) AS count
+FROM 
+    production.received_contracts
+WHERE 
+    drawer_number IS NOT NULL 
+GROUP BY 
+    shipment_number,
+    drawer_number
+ORDER BY shipment_date ASC;

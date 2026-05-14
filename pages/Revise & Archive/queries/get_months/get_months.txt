@@ -1,0 +1,14 @@
+SELECT 
+    TO_CHAR(DATE_TRUNC('month', approval_date), 'Mon-YY') AS shipment_month,
+    COUNT(shipment_number) AS count,
+    DATE_TRUNC('month', approval_date) AS sort_date
+FROM 
+    production.received_contracts
+WHERE 
+    drawer_number IS NOT NULL 
+    AND approval_date IS NOT NULL
+GROUP BY 
+    shipment_month,
+    sort_date
+ORDER BY 
+    sort_date ASC;

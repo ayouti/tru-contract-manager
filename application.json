@@ -1,0 +1,76 @@
+{
+  "appIsExample": false,
+  "appLayout": {
+    "type": "MOBILE"
+  },
+  "applicationDetail": {
+    "appPositioning": {
+      "type": "FIXED"
+    },
+    "navigationSetting": {
+      "colorStyle": "light",
+      "logoAssetId": "",
+      "logoConfiguration": "logoAndApplicationTitle",
+      "navStyle": "inline",
+      "orientation": "top",
+      "position": "static",
+      "showNavbar": true,
+      "showSignIn": true
+    },
+    "themeSetting": {
+      "appMaxWidth": "LARGE",
+      "density": 1.0,
+      "sizing": 1.0
+    }
+  },
+  "applicationVersion": 2,
+  "collapseInvisibleWidgets": true,
+  "color": "#D9E7FF",
+  "evaluationVersion": 2,
+  "icon": "pie-chart",
+  "pages": [
+    {
+      "id": "First Review 🧪",
+      "isDefault": false
+    },
+    {
+      "id": "Receive",
+      "isDefault": true
+    },
+    {
+      "id": "Revise & Archive",
+      "isDefault": false
+    },
+    {
+      "id": "Pending Contracts",
+      "isDefault": false
+    },
+    {
+      "id": "RESTRICTED",
+      "isDefault": false
+    }
+  ],
+  "unpublishedAppLayout": {
+    "type": "MOBILE"
+  },
+  "unpublishedApplicationDetail": {
+    "appPositioning": {
+      "type": "FIXED"
+    },
+    "navigationSetting": {
+      "colorStyle": "light",
+      "logoAssetId": "",
+      "logoConfiguration": "logoAndApplicationTitle",
+      "navStyle": "inline",
+      "orientation": "top",
+      "position": "static",
+      "showNavbar": true,
+      "showSignIn": true
+    },
+    "themeSetting": {
+      "appMaxWidth": "LARGE",
+      "density": 1.0,
+      "sizing": 1.0
+    }
+  }
+}

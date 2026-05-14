@@ -1,0 +1,41 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 68,
+  "boxShadow": "none",
+  "buttonColor": "#3f3f46",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "tooltip"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconName": "calendar",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "od5q460xr6",
+  "leftColumn": 0,
+  "minWidth": 50,
+  "mobileBottomRow": 76,
+  "mobileLeftColumn": 16,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 72,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 14.59375,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 2,
+  "tooltip": "{{ \n  (() => {\n    const data = get_months.data;\n    if (!data || data.length === 0) return \"No data available\";\n\n    return data.map(row => {\n      const cCount = Number(row.count);\n      const sCount = data.length; \n\n      // Pluralization logic\n      const cLabel = cCount === 1 ? \"contract\" : \"contracts\";\n      \n      /* IMPORTANT: Since your SQL query groups by month, \n         row.count is the total contracts for that month.\n         To get the number of shipments per month from your NEW SQL, \n         the query would actually need to be COUNT(DISTINCT shipment_number).\n      */\n      \n      return `<strong>${row.shipment_month}</strong>: ${cCount} ${cLabel}`;\n    }).join('<br>');\n  })()\n}}",
+  "topRow": 64,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "63ol6xvcrf",
+  "widgetName": "IconButton1"
+}

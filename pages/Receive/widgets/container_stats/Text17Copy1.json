@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "disableLink": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "j320dnd7tp",
+  "leftColumn": 35,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 79,
+  "mobileLeftColumn": 6,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 75,
+  "needsErrorInfo": false,
+  "originalBottomRow": 16,
+  "originalTopRow": 8,
+  "overflow": "NONE",
+  "parentColumnSpace": 11.6875,
+  "parentId": "t4d6jkt43v",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 49,
+  "shouldTruncate": false,
+  "text": "{{get_daily_stats.data.reduce((sum, row) => sum + Number(row.total), 0) || 0 }} contract(s)",
+  "textAlign": "RIGHT",
+  "textColor": "#231F20",
+  "topRow": 0,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "0l4xz31bzv",
+  "widgetName": "Text17Copy1"
+}

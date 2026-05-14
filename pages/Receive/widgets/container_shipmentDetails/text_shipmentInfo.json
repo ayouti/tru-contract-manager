@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "m02ui3l4c0",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 15,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "originalBottomRow": 4,
+  "originalTopRow": 0,
+  "overflow": "NONE",
+  "parentColumnSpace": 11.6875,
+  "parentId": "werjdnmbc9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 44,
+  "shouldTruncate": false,
+  "text": "Shipment #: <strong>{{ Shipments.details.shipmentNumber}}</strong> | Started: <strong>{{ moment(Shipments.details.startTime).format('h:mm A') }}</strong>",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 0,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "n9rnklphf5",
+  "widgetName": "text_shipmentInfo"
+}

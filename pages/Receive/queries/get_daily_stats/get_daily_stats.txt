@@ -1,0 +1,20 @@
+SELECT 
+    received_by,
+    COUNT(*) AS total
+FROM 
+    production.received_contracts
+WHERE 
+    contract_received_date::DATE = CURRENT_DATE
+    AND (
+        -- If this evaluates to true, Postgres ignores the rest and returns everyone
+        {{ Auth.isSupervisor() }} = TRUE 
+        
+        OR 
+        
+        -- If they aren't a supervisor, Postgres strictly matches their email
+        received_by = {{ appsmith.user.email }}
+    )
+GROUP BY 
+    received_by
+ORDER BY 
+    total DESC;

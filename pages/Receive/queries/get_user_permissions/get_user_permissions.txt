@@ -1,0 +1,4 @@
+SELECT app_permissions -> {{ Auth.appId }} AS permissions
+FROM access_control
+WHERE email = {{ appsmith.user.email }}
+  AND (app_permissions -> '{{ Auth.appId}}') IS NOT NULL;

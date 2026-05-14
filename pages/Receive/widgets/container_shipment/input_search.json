@@ -1,0 +1,83 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": false,
+  "autoFocus": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "defaultText": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onSubmit"
+    },
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    },
+    {
+      "key": "onBlur"
+    },
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "03vu05l752",
+  "label": "",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "",
+  "labelTextColor": "#3f3f46",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxChars": "14",
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 5,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "onBlur": "",
+  "onSubmit": "{{ Contracts.processInput() }}",
+  "onTextChanged": "{{ Contracts.throttleFilter(input_search.text) }}",
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
+  "parentColumnSpace": 11.6875,
+  "parentId": "wmy6e0b004",
+  "parentRowSpace": 10,
+  "placeholderText": "Scan bar code, or enter NID or mobile #:",
+  "regex": "^\\d*$",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": false,
+  "responsiveBehavior": "fill",
+  "rightColumn": 37,
+  "shouldAllowAutofill": false,
+  "shouldScrollContents": true,
+  "showStepArrows": false,
+  "topRow": 0,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "tx37h77ftl",
+  "widgetName": "input_search"
+}

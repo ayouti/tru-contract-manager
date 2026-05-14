@@ -1,0 +1,63 @@
+{
+  "animateLoading": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 68,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": "{{!get_shipments.isLoading}}",
+  "key": "0toislk556",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 67,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 11,
+  "mobileTopRow": 63,
+  "needsErrorInfo": false,
+  "originalBottomRow": 69,
+  "originalTopRow": 64,
+  "overflow": "NONE",
+  "parentColumnSpace": 9.765625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 20,
+  "shouldTruncate": false,
+  "text": "{{ \n  (() => {\n    const data = get_shipments.data || [];\n    const totalContracts = data.reduce((acc, curr) => acc + Number(curr.count), 0);\n    const totalShipments = data.length;\n\n    // Dynamic labels\n    const cLabel = totalContracts === 1 ? \"contract\" : \"contracts\";\n    const sLabel = totalShipments === 1 ? \"shipment\" : \"shipments\";\n\n    return `Total: ${totalContracts} ${cLabel} in ${totalShipments} ${sLabel}`;\n  })()\n}}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 64,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "xd77cymm9w",
+  "widgetName": "Text2"
+}

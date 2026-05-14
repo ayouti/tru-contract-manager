@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 13,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "m02ui3l4c0",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "originalBottomRow": 13,
+  "originalTopRow": 6,
+  "overflow": "NONE",
+  "parentColumnSpace": 6.9375,
+  "parentId": "m2dvlyvxoq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shouldTruncate": false,
+  "text": "{{ \"You are about to receive \" + Contracts.stagedContracts.length + \" contracts in shipment \" + Shipments.details.shipmentNumber + \". To continue, enter the drawer #:\" }}",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 6,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "elu22w40my",
+  "widgetName": "text_confirmStats"
+}

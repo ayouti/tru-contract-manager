@@ -1,0 +1,48 @@
+{
+  "gitSyncId": "6904abf885bff76d9e2e3f75_bd490429-00b4-41ed-abda-ea8ea5966087",
+  "id": "Receive_Contracts",
+  "unpublishedCollection": {
+    "name": "Contracts",
+    "pageId": "Receive",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "stagedContracts",
+        "value": "[]"
+      },
+      {
+        "name": "filteredList",
+        "value": "[]"
+      },
+      {
+        "name": "contractMap",
+        "value": "{}"
+      },
+      {
+        "name": "matchCount",
+        "value": "0"
+      },
+      {
+        "name": "commentOptions",
+        "value": "[\"PN - Limit Increase\", \"PN - Amended\", \"PN w/o Contract\", \"Contract w/o PN\"]"
+      },
+      {
+        "name": "filterTimer",
+        "value": "null"
+      },
+      {
+        "name": "isFiltering",
+        "value": "false"
+      },
+      {
+        "name": "lastSearchText",
+        "value": "null"
+      },
+      {
+        "name": "searchIndex",
+        "value": "[]"
+      }
+    ]
+  }
+}

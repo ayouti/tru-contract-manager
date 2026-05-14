@@ -1,0 +1,58 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 7,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{get_pending_contracts.isLoading}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "7q2v8bj7cn",
+  "leftColumn": 24,
+  "minWidth": 120,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 25,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClick": "{{showModal(modal_newShipment.name);}}",
+  "parentColumnSpace": 11.6875,
+  "parentId": "d9bsc9avum",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 41,
+  "text": "Receive New Shipment",
+  "topRow": 1,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "4sk6m9wl1p",
+  "widgetName": "btn_newShipment"
+}

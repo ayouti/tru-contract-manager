@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6904abf885bff76d9e2e3f75_4facf0a4-4b08-4a28-b687-41a50f018860",
+  "id": "Revise & Archive_Auth",
+  "unpublishedCollection": {
+    "name": "Auth",
+    "pageId": "Revise & Archive",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "appId",
+        "value": "\"customer_contracts_archive\""
+      }
+    ]
+  }
+}

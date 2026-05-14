@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6904abf885bff76d9e2e3f75_d3b8d75e-3ea0-4ca8-8596-4dba85afc2df",
+  "id": "Receive_App",
+  "unpublishedCollection": {
+    "name": "App",
+    "pageId": "Receive",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

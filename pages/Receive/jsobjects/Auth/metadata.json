@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6904abf885bff76d9e2e3f75_6d08d847-dd15-4da4-8d71-eab84bc72929",
+  "id": "Receive_Auth",
+  "unpublishedCollection": {
+    "name": "Auth",
+    "pageId": "Receive",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "appId",
+        "value": "\"customer_contracts_receive\""
+      }
+    ]
+  }
+}

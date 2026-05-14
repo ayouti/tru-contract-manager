@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6904abf885bff76d9e2e3f75_79fab39f-3f84-4dc0-b9a0-dc30b3c6f888",
+  "id": "Pending Contracts_Auth",
+  "unpublishedCollection": {
+    "name": "Auth",
+    "pageId": "Pending Contracts",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "appId",
+        "value": "\"customer_contracts_pending\""
+      }
+    ]
+  }
+}

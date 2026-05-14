@@ -1,0 +1,99 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "#f1f5f9",
+  "borderColor": "",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "",
+  "bottomRow": 122,
+  "bottomRowBeforeCollapse": 46,
+  "boxShadow": "none",
+  "children": [
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 350,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "4hkgbpm1ym",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 100,
+      "minWidth": 450,
+      "mobileBottomRow": 100,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 280.5,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "bwjxxvo5cb",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 280.5,
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "t4d6jkt43v",
+      "widgetName": "Canvas10"
+    }
+  ],
+  "containerStyle": "card",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "stretch",
+  "isCanvas": true,
+  "isLoading": false,
+  "isVisible": "{{Auth.isSupervisor()}}",
+  "key": "z5bo56q09v",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 10,
+  "minWidth": 450,
+  "mobileBottomRow": 95,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 85,
+  "needsErrorInfo": false,
+  "originalBottomRow": 120,
+  "originalTopRow": 87,
+  "parentColumnSpace": 11.6875,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "topRow": 87,
+  "topRowBeforeCollapse": 10,
+  "type": "CONTAINER_WIDGET",
+  "version": 1,
+  "widgetId": "bwjxxvo5cb",
+  "widgetName": "container_stats"
+}

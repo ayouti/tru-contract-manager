@@ -1,0 +1,4 @@
+UPDATE production.received_contracts
+SET drawer_number = NULL
+WHERE shipment_number = {{ this.params.shipmentNumber }}
+  AND drawer_number = {{ this.params.drawerNumber }}; -- Added this line

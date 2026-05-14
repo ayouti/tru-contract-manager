@@ -1,0 +1,5 @@
+{
+	"action": "get_shipment",
+	"shipment": {{ this.params.shipmentNumber }},
+	"drawer": {{ this.params.drawerNumber }}
+}

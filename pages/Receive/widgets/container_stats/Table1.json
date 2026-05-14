@@ -1,0 +1,191 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 33,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "editActions": {
+      "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "received_by",
+    "total"
+  ],
+  "columnUpdatedAt": 1772104185131,
+  "columnWidthMap": {
+    "officer_email": 279,
+    "received_by": 253
+  },
+  "compactMode": "DEFAULT",
+  "customIsLoading": false,
+  "customIsLoadingValue": "",
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": "",
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.received_by.computedValue"
+    },
+    {
+      "key": "isVisiblePagination"
+    },
+    {
+      "key": "primaryColumns.total.computedValue"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "isVisiblePagination"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableClientSideSearch": true,
+  "endOfData": false,
+  "flexVerticalAlignment": "start",
+  "horizontalAlignment": "LEFT",
+  "inlineEditingSaveOption": "ROW_LEVEL",
+  "isLoading": false,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": false,
+  "isVisibleFilters": false,
+  "isVisiblePagination": "{{get_daily_stats.data.length > 6}}",
+  "isVisibleSearch": false,
+  "key": "j6i99bh3ai",
+  "label": "Data",
+  "leftColumn": 17,
+  "minWidth": 450,
+  "mobileBottomRow": 114,
+  "mobileLeftColumn": 15,
+  "mobileRightColumn": 49,
+  "mobileTopRow": 86,
+  "needsErrorInfo": false,
+  "originalBottomRow": 126,
+  "originalTopRow": 86,
+  "parentColumnSpace": 11.6875,
+  "parentId": "t4d6jkt43v",
+  "parentRowSpace": 10,
+  "primaryColumns": {
+    "received_by": {
+      "alias": "received_by",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.received_by.split('@')[0])) : currentRow.received_by.split('@')[0] })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "received_by",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Name",
+      "notation": "standard",
+      "originalId": "received_by",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "total": {
+      "alias": "total",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"total\"])) : total })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "RIGHT",
+      "id": "total",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Total",
+      "notation": "standard",
+      "originalId": "total",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 49,
+  "searchKey": "",
+  "tableData": "{{get_daily_stats.data}}",
+  "textSize": "0.875rem",
+  "topRow": 4,
+  "totalRecordsCount": 0,
+  "type": "TABLE_WIDGET_V2",
+  "variant": "VARIANT3",
+  "version": 2,
+  "verticalAlignment": "CENTER",
+  "widgetId": "olwmo1j1hd",
+  "widgetName": "Table1"
+}

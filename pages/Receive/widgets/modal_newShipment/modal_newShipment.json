@@ -1,0 +1,98 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 19,
+  "boxShadow": "none",
+  "canEscapeKeyClose": true,
+  "canOutsideClickClose": true,
+  "children": [
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 190,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": true,
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "flexLayers": [],
+      "isDisabled": false,
+      "isLoading": false,
+      "isVisible": true,
+      "key": "phneo7indg",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 168,
+      "minWidth": 450,
+      "mobileBottomRow": 240,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 280.5,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "snev0gaa7h",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 280.5,
+      "shouldScrollContents": false,
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "9dzlntejkz",
+      "widgetName": "Canvas3"
+    }
+  ],
+  "detachFromLayout": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClose"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClose"
+    }
+  ],
+  "height": 190,
+  "isCanvas": true,
+  "isLoading": false,
+  "key": "pr66f0v9n0",
+  "leftColumn": 27,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 10,
+  "minHeight": 190,
+  "mobileBottomRow": 64,
+  "mobileLeftColumn": 27,
+  "mobileRightColumn": 51,
+  "mobileTopRow": 40,
+  "needsErrorInfo": false,
+  "onClose": "{{resetWidget(\"form_newShipment\", true) }}",
+  "originalBottomRow": 19,
+  "originalTopRow": 40,
+  "parentColumnSpace": 11.6875,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 51,
+  "shouldScrollContents": true,
+  "topRow": 40,
+  "type": "MODAL_WIDGET",
+  "version": 2,
+  "widgetId": "snev0gaa7h",
+  "widgetName": "modal_newShipment",
+  "width": 364
+}

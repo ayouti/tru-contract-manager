@@ -1,0 +1,1 @@
+SELECT DISTINCT shipment_number FROM production.received_contracts WHERE status='PENDING_1ST_REVIEW' AND received_by ILIKE '%trufinance%'

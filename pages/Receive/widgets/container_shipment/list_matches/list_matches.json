@@ -1,0 +1,136 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "additionalStaticProps": [
+    "level",
+    "levelData",
+    "prefixMetaWidgetId",
+    "metaWidgetId"
+  ],
+  "animateLoading": false,
+  "backgroundColor": "transparent",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 69,
+  "bottomRowBeforeCollapse": 59,
+  "boxShadow": "none",
+  "children": [
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 610,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dropDisabled": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "phneo7indg",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 400,
+      "minWidth": 450,
+      "mobileBottomRow": 400,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 280.5,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "noPad": true,
+      "openParentPropertyPane": true,
+      "parentColumnSpace": 1,
+      "parentId": "ezi3w9i59d",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 280.5,
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "k152hi2j2x",
+      "widgetName": "Canvas1"
+    }
+  ],
+  "currentItemsView": "{{[]}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "currentItemsView"
+    },
+    {
+      "key": "selectedItemView"
+    },
+    {
+      "key": "triggeredItemView"
+    },
+    {
+      "key": "primaryKeys"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "listData"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onItemClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onItemClick"
+    }
+  ],
+  "enhancements": true,
+  "flexVerticalAlignment": "start",
+  "gridType": "vertical",
+  "hasMetaWidgets": true,
+  "isCanvas": true,
+  "isLoading": false,
+  "isVisible": true,
+  "itemBackgroundColor": "#FFFFFF",
+  "itemSpacing": "6",
+  "key": "kmfwd8vv29",
+  "leftColumn": 0,
+  "listData": "{{ Contracts.filteredList }}",
+  "mainCanvasId": "k152hi2j2x",
+  "mainContainerId": "ynq75t2swn",
+  "minWidth": 450,
+  "mobileBottomRow": 51,
+  "mobileLeftColumn": 4,
+  "mobileRightColumn": 28,
+  "mobileTopRow": 11,
+  "needsErrorInfo": false,
+  "onItemClick": "{{ Contracts.addContractByPk(currentItem.loan_application_id) }}",
+  "originalBottomRow": 66,
+  "originalTopRow": 11,
+  "pageSize": 6,
+  "parentColumnSpace": 11.6875,
+  "parentId": "wmy6e0b004",
+  "parentRowSpace": 10,
+  "primaryKeys": "{{list_matches.listData.map((currentItem, currentIndex) => currentItem[\"loan_application_id\"] )}}",
+  "renderMode": "CANVAS",
+  "requiresFlatWidgetChildren": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 37,
+  "selectedItemView": "{{{}}}",
+  "templateHeight": 160,
+  "topRow": 8,
+  "topRowBeforeCollapse": 4,
+  "triggeredItemView": "{{{}}}",
+  "type": "LIST_WIDGET_V2",
+  "widgetId": "ezi3w9i59d",
+  "widgetName": "list_matches"
+}

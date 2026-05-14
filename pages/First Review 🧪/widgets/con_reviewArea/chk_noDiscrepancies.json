@@ -1,0 +1,47 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "defaultCheckedState": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "d2edqq9hrz",
+  "label": "No Discrepancies Found",
+  "labelPosition": "Right",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 12,
+  "mobileTopRow": 3,
+  "needsErrorInfo": false,
+  "originalBottomRow": 8,
+  "originalTopRow": 3,
+  "parentColumnSpace": 14.28125,
+  "parentId": "ah1ru6i46h",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "topRow": 4,
+  "type": "CHECKBOX_WIDGET",
+  "version": 1,
+  "widgetId": "xdr3kmql56",
+  "widgetName": "chk_noDiscrepancies"
+}

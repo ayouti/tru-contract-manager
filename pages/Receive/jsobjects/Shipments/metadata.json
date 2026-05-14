@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6904abf885bff76d9e2e3f75_039158ed-5752-49a2-b287-f2fa7fa8ad72",
+  "id": "Receive_Shipments",
+  "unpublishedCollection": {
+    "name": "Shipments",
+    "pageId": "Receive",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "details",
+        "value": "{}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "#71717a",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "square",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "idcvhghucn",
+  "leftColumn": 0,
+  "minWidth": 50,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 6,
+  "mobileRightColumn": 10,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClick": "",
+  "parentColumnSpace": 5.03515625,
+  "parentId": "8bbon69tc5",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 7,
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "vvuqm1qof8",
+  "widgetName": "btn_toggle"
+}

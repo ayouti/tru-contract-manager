@@ -1,0 +1,56 @@
+{
+  "animateLoading": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": false,
+  "key": "m3hicjnqio",
+  "leftColumn": 30,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 48,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "originalBottomRow": 5,
+  "originalTopRow": 0,
+  "overflow": "NONE",
+  "parentColumnSpace": 9.4716796875,
+  "parentId": "wdunazygk9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 61,
+  "shouldScrollContents": true,
+  "shouldTruncate": false,
+  "text": "{{get_shipment_details.data.length}} contract(s) total — {{ table_shipmentDetails.tableData.filter(row => row.pn_revision_id == null || row.pn_revision_id === \"\").length > 0 ? table_shipmentDetails.tableData.filter(row => row.pn_revision_id == null || row.pn_revision_id === \"\").length + ' not revised' : '✅ All PNs revised' }}",
+  "textAlign": "RIGHT",
+  "textColor": "#231F20",
+  "topRow": 0,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "kky5bmdkyx",
+  "widgetName": "text_ShipmentStatus"
+}
