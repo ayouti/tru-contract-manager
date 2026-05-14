@@ -40,7 +40,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 59,
   "shouldTruncate": false,
-  "text": "Hello {{appsmith.user.name || appsmith.user.email}}",
+  "text": "Loan ID: {{ReviewState.currentContract?.loan_application_id}}\nCustomer: {{ReviewState.currentContract?.customer_name}}\nAgent: {{ReviewState.currentContract?.agent_name}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 0,

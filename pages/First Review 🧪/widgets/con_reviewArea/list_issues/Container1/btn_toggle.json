@@ -3,11 +3,17 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 4,
   "boxShadow": "none",
-  "buttonColor": "#71717a",
+  "buttonColor": "{{ReviewState.selectedIssues.some(i => i.Issue === currentItem.Issue && i.Category === currentItem.Category) ? appsmith.theme.colors.primaryColor : '#e0dede'}}",
   "buttonVariant": "TERTIARY",
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "iconName"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -21,7 +27,7 @@
       "key": "onClick"
     }
   ],
-  "iconName": "square",
+  "iconName": "{{ReviewState.selectedIssues.some(i => i.Issue === currentItem.Issue && i.Category === currentItem.Category) ? 'tick-circle' : 'square'}}",
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
@@ -33,7 +39,7 @@
   "mobileRightColumn": 10,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "",
+  "onClick": "{{ReviewState.toggleIssue(currentItem)}}",
   "parentColumnSpace": 5.03515625,
   "parentId": "8bbon69tc5",
   "parentRowSpace": 10,

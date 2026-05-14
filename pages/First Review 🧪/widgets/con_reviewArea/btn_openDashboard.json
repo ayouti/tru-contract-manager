@@ -13,8 +13,19 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "iconName": "eye-open",
+  "onClick": "{{navigateTo('INSERT_YOUR_BACKEND_URL_HERE' + ReviewState.currentContract?.loan_application_id, {}, 'NEW_WINDOW')}}",
+  "tooltip": "Open Contract in Dashboard",
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,

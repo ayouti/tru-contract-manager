@@ -1,0 +1,6 @@
+UPDATE production.received_contracts
+SET
+  status = 'REVIEWED_1ST',
+  first_review_date = NOW(),
+  first_review_discrepancies = {{ReviewState.selectedIssues}}::jsonb
+WHERE loan_application_id = {{ReviewState.currentContract.loan_application_id}};

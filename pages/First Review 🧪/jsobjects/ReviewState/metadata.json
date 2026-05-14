@@ -1,0 +1,28 @@
+{
+  "gitSyncId": "6904abf885bff76d9e2e3f75_a1b2c3d4-1111-2222-3333-44445555666a",
+  "id": "First Review 🧪_ReviewState",
+  "unpublishedCollection": {
+    "name": "ReviewState",
+    "pageId": "First Review 🧪",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "currentContract",
+        "value": "null"
+      },
+      {
+        "name": "rawDiscrepancies",
+        "value": "[]"
+      },
+      {
+        "name": "selectedIssues",
+        "value": "[]"
+      },
+      {
+        "name": "progress",
+        "value": "{ completed: 0, target: 0 }"
+      }
+    ]
+  }
+}

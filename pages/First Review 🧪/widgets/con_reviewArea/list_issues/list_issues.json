@@ -74,6 +74,9 @@
     },
     {
       "key": "accentColor"
+    },
+    {
+      "key": "listData"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -88,7 +91,7 @@
   "itemSpacing": "2",
   "key": "frcbadwgna",
   "leftColumn": 0,
-  "listData": "[\n  {\n    \"id\": \"001\",\n    \"name\": \"Issue 1\",\n    \"img\": \"https://assets.appsmith.com/widgets/default.png\"\n  },\n  {\n    \"id\": \"002\",\n    \"name\": \"Issue 2\",\n    \"img\": \"https://assets.appsmith.com/widgets/default.png\"\n  },\n  {\n    \"id\": \"003\",\n    \"name\": \"Issue 3\",\n    \"img\": \"https://assets.appsmith.com/widgets/default.png\"\n  }\n]",
+  "listData": "{{ReviewState.getIssuesForList()}}",
   "mainCanvasId": "30d2asjxeb",
   "mainContainerId": "34ndspkf6x",
   "minWidth": 450,
@@ -103,7 +106,7 @@
   "parentColumnSpace": 14.59375,
   "parentId": "ah1ru6i46h",
   "parentRowSpace": 10,
-  "primaryKeys": "{{list_issues.listData.map((currentItem, currentIndex) => currentItem[\"id\"] )}}",
+  "primaryKeys": "{{list_issues.listData.map((currentItem, currentIndex) => currentItem[\"Category\"] + '-' + currentItem[\"Subcategory\"] + '-' + currentItem[\"Issue\"] )}}",
   "renderMode": "CANVAS",
   "requiresFlatWidgetChildren": true,
   "responsiveBehavior": "fill",

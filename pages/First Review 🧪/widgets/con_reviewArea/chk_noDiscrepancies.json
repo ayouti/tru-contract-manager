@@ -14,7 +14,17 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onCheckChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onCheckChange"
+    }
+  ],
+  "onCheckChange": "{{ if(chk_noDiscrepancies.isChecked) { ReviewState.selectedIssues = []; } }}",
   "isDisabled": false,
   "isLoading": false,
   "isRequired": false,
