@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 19,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
@@ -11,6 +11,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -27,11 +30,10 @@
       "key": "onOptionChange"
     }
   ],
-  "onOptionChange": "{{resetWidget('select_subcategory', true)}}",
   "isDisabled": false,
-  "isFilterable": true,
+  "isFilterable": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": true,
   "isVisible": true,
   "key": "z6m4n2294j",
   "labelAlignment": "left",
@@ -48,6 +50,7 @@
   "mobileRightColumn": 50,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
+  "onOptionChange": "{{resetWidget('select_subcategory', true)}}",
   "optionLabel": "label",
   "optionValue": "value",
   "originalBottomRow": 19,
@@ -60,8 +63,8 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "serverSideFiltering": false,
-  "sourceData": "{{ReviewState.getCategories()}}",
-  "topRow": 12,
+  "sourceData": "{{\n  [...new Set((fetch_discrepancies.data || []).map(item => item.category))]\n    .filter(Boolean)\n    .map(c => ({ label: c, value: c }))\n}}",
+  "topRow": 15,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "d1mhye81b4",

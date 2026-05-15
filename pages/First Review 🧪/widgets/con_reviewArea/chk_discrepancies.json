@@ -3,17 +3,25 @@
   "alignWidget": "LEFT",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
-  "defaultCheckedState": false,
+  "bottomRow": 15,
+  "defaultCheckedState": "{{ReviewState.selectedIssues.length>0}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultCheckedState"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultCheckedState"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "isDisabled": true,
   "isLoading": false,
@@ -31,15 +39,15 @@
   "mobileRightColumn": 37,
   "mobileTopRow": 67,
   "needsErrorInfo": false,
-  "originalBottomRow": 71,
-  "originalTopRow": 67,
+  "originalBottomRow": 15,
+  "originalTopRow": 11,
   "parentColumnSpace": 6.84375,
   "parentId": "ah1ru6i46h",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 4,
-  "topRow": 8,
+  "topRow": 11,
   "type": "CHECKBOX_WIDGET",
   "version": 1,
   "widgetId": "qc9d8i5s11",

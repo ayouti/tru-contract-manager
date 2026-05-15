@@ -21,7 +21,7 @@
       },
       {
         "name": "progress",
-        "value": "{ completed: 0, target: 0 }"
+        "value": "{\n  completed: 0,\n  target: 0\n}"
       }
     ]
   }

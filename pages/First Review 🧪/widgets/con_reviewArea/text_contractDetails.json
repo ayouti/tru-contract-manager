@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 7,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -17,6 +17,7 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "1rem",
   "fontStyle": "BOLD",
@@ -32,6 +33,8 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "originalBottomRow": 7,
+  "originalTopRow": 0,
   "overflow": "NONE",
   "parentColumnSpace": 14.28125,
   "parentId": "ah1ru6i46h",
@@ -40,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 59,
   "shouldTruncate": false,
-  "text": "Loan ID: {{ReviewState.currentContract?.loan_application_id}}\nCustomer: {{ReviewState.currentContract?.customer_name}}\nAgent: {{ReviewState.currentContract?.agent_name}}",
+  "text": "Loan Appl. ID: {{ReviewState.currentContract?.loan_application_id}}\nCustomer: {{ReviewState.currentContract?.customer_name}}\nAgent: {{ReviewState.currentContract?.agent_name}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 0,

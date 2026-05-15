@@ -3,7 +3,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 4,
   "boxShadow": "none",
-  "buttonColor": "{{ReviewState.selectedIssues.some(i => i.Issue === currentItem.Issue && i.Category === currentItem.Category) ? appsmith.theme.colors.primaryColor : '#e0dede'}}",
+  "buttonColor": "{{ReviewState.selectedIssues.some(i => i.issue === currentItem.issue && i.category === currentItem.category) ? appsmith.theme.colors.primaryColor : '#e0dede'}}",
   "buttonVariant": "TERTIARY",
   "dynamicBindingPathList": [
     {
@@ -20,6 +20,12 @@
   "dynamicPropertyPathList": [
     {
       "key": "onClick"
+    },
+    {
+      "key": "iconName"
+    },
+    {
+      "key": "buttonColor"
     }
   ],
   "dynamicTriggerPathList": [
@@ -27,7 +33,7 @@
       "key": "onClick"
     }
   ],
-  "iconName": "{{ReviewState.selectedIssues.some(i => i.Issue === currentItem.Issue && i.Category === currentItem.Category) ? 'tick-circle' : 'square'}}",
+  "iconName": "{{ReviewState.selectedIssues.some(i => i.issue === currentItem.issue && i.category === currentItem.category) ? 'tick-circle' : 'square'}}",
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,

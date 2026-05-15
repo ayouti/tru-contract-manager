@@ -2,15 +2,21 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 20,
+  "bottomRow": 23,
   "boxShadow": "none",
-  "defaultOptionValue": "",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( select_subcategory.options[0] ? select_subcategory.options[0].value : \"\"))(select_subcategory.options, select_subcategory.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -21,9 +27,9 @@
   ],
   "dynamicTriggerPathList": [],
   "isDisabled": false,
-  "isFilterable": true,
+  "isFilterable": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": true,
   "isVisible": true,
   "key": "z6m4n2294j",
   "labelAlignment": "left",
@@ -52,8 +58,8 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "serverSideFiltering": false,
-  "sourceData": "{{ReviewState.getSubcategories()}}",
-  "topRow": 16,
+  "sourceData": "{{\n  !select_category.selectedOptionValue ? [] :\n  [...new Set(\n    (fetch_discrepancies.data || [])\n      .filter(item => item.category === select_category.selectedOptionValue)\n      .map(item => item.subcategory)\n  )]\n  .filter(Boolean)\n  .map(s => ({ label: String(s), value: String(s) }))\n}}",
+  "topRow": 19,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "yxq0r02zil",
