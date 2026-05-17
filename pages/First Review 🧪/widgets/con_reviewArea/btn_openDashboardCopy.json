@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 15,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "TERTIARY",
@@ -23,7 +23,7 @@
       "key": "onClick"
     }
   ],
-  "iconName": "eye-open",
+  "iconName": "list",
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
@@ -43,9 +43,9 @@
   "responsiveBehavior": "hug",
   "rightColumn": 64,
   "tooltip": "Open Contract in Dashboard",
-  "topRow": 0,
+  "topRow": 11,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "azfi4pkoaz",
-  "widgetName": "btn_openDashboard"
+  "widgetId": "6bufme1j64",
+  "widgetName": "btn_openDashboardCopy"
 }
