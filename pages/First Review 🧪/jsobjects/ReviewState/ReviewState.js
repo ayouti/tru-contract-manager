@@ -43,7 +43,7 @@ export default {
 		const res = await get_next_contract.run();
 		if (res && res.length > 0) {
 			this.currentContract = res[0];
-			navigateTo('https://trufinance.app/dash/loans/loanapplication/' + res[0].loan_application_id + '/change/?_changelist_filters=q%3D' + res[0].loan_application_id, {}, 'NEW_WINDOW');
+			navigateTo('https://dash.trufinance.app/loan-applications/' + res[0].loan_application_id + '?tab=kyc', {}, 'NEW_WINDOW');
 			showAlert('Contract loaded.', 'info');
 		} else {
 			showAlert('Queue is empty! No pending contracts right now.', 'warning');
