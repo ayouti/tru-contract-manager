@@ -39,7 +39,7 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "onClick": "{{ReviewState.handleMainAction()}}",
+  "onClick": "{{ReviewState.handleMainAction();}}",
   "parentColumnSpace": 14.59375,
   "parentId": "0",
   "parentRowSpace": 10,

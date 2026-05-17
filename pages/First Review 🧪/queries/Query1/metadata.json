@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6904abf885bff76d9e2e3f75_a1b2c3d4-1111-2222-3333-444455556668",
-  "id": "First Review 🧪_submit_review",
+  "gitSyncId": "6904abf885bff76d9e2e3f75_b396b425-7086-4817-a5ab-4f52020bac92",
+  "id": "First Review 🧪_Query1",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE production.received_contracts\nSET\n  status = 'REVIEWED_1ST',\n  first_review_date = NOW(),\n  first_review_discrepancies = {{JSON.stringify(ReviewState.selectedIssues)}}::jsonb\nWHERE loan_application_id = {{ReviewState.currentContract.loan_application_id}};",
+      "body": "UPDATE production.received_contracts\nSET\n  status = 'PENDING_1ST_REVIEW',\n  locked_at = NULL,\n  first_reviewed_by = NULL,\n  first_review_date = NULL,\n  first_review_discrepancies = NULL\nWHERE status IN ('IN_PROGRESS_1ST', 'REVIEWED_1ST')\nRETURNING loan_application_id",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,12 +22,8 @@
       "name": "Automation DB",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "submit_review",
+    "dynamicBindingPathList": [],
+    "name": "Query1",
     "pageId": "First Review 🧪",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

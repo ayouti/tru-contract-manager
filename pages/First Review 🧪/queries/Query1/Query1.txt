@@ -1,0 +1,9 @@
+UPDATE production.received_contracts
+SET
+  status = 'PENDING_1ST_REVIEW',
+  locked_at = NULL,
+  first_reviewed_by = NULL,
+  first_review_date = NULL,
+  first_review_discrepancies = NULL
+WHERE status IN ('IN_PROGRESS_1ST', 'REVIEWED_1ST')
+RETURNING loan_application_id
