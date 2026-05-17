@@ -11,11 +11,17 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "tooltip"
     }
   ],
   "dynamicPropertyPathList": [
     {
-      "key": "onClick"
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -24,7 +30,7 @@
     }
   ],
   "iconName": "list",
-  "isDisabled": false,
+  "isDisabled": "{{ReviewState.selectedIssues.length===0}}",
   "isLoading": false,
   "isVisible": true,
   "key": "vd2j6rspvp",
@@ -35,14 +41,16 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('https://dash.trufinance.app/loan-applications/' + ReviewState.currentContract?.loan_application_id + '?tab=kyc', {}, 'NEW_WINDOW')}}",
+  "onClick": "",
+  "originalBottomRow": 15,
+  "originalTopRow": 11,
   "parentColumnSpace": 14.28125,
   "parentId": "ah1ru6i46h",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
   "rightColumn": 64,
-  "tooltip": "Open Contract in Dashboard",
+  "tooltip": "<strong>Flagged Issues:</strong><br />\n{{ReviewState.selectedIssues.map(item => \n    `• ${item.category} - ${item.subcategory} - ${item.issue}`\n  ).join('<br />')}}",
   "topRow": 11,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
