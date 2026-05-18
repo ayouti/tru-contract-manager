@@ -52,7 +52,6 @@ export default {
 			this.currentContract = null; // Explicitly clears card display area
 			showAlert('Queue is empty! No more pending contracts available.', 'warning');
 		}
-		await this.refreshProgress();
 	},
 
 	async startEditing(row) {
@@ -89,6 +88,16 @@ export default {
 		resetWidget('select_subcategory', true);
 	},
 
+	handleRelease: async () => {
+		if (this.currentContract) {
+			await unlock_current_contract.run();
+			showAlert('Contract released back into the queue.', 'info');
+			this.clearReviewState();
+			// Note: We deliberately do NOT auto-pull the next contract here, 
+			// giving the agent a chance to breathe before clicking "Get Contract" again.
+		}
+	},
+	
 	toggleIssue(issueObj) {
 		const existsIndex = this.selectedIssues.findIndex(i =>
 																											i.category === issueObj.category &&

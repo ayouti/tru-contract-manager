@@ -1,6 +1,9 @@
 UPDATE production.received_contracts
 SET 
-  status = 'REVIEWED_1ST',
+  status = CASE 
+    WHEN status = 'IN_PROGRESS_1ST_RECEIVED' THEN 'RECEIVED' 
+    ELSE 'REVIEWED_1ST' 
+  END,
   first_review_date = NOW(),
   first_review_discrepancies = {{JSON.stringify(ReviewState.selectedIssues)}}::jsonb,
   first_review_shift_id = COALESCE(

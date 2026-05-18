@@ -1,0 +1,59 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "buttonColor": "{{ ReviewState.isEditing ? '#b91c1c' : appsmith.theme.colors.primaryColor }}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    },
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "lock",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{ ReviewState.currentContract !== null && !ReviewState.isEditing }}",
+  "key": "843304fzug",
+  "leftColumn": 26,
+  "minWidth": 50,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 60,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "onClick": "{{ ReviewState.handleRelease() }}",
+  "parentColumnSpace": 14.59375,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 30,
+  "topRow": 1,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "8ctnvlo296",
+  "widgetName": "btn_release"
+}

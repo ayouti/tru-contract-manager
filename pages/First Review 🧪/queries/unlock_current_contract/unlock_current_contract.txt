@@ -2,6 +2,8 @@ UPDATE production.received_contracts
 SET 
   first_reviewed_by = NULL,
   locked_at = NULL,
-  status = 'PENDING_1ST_REVIEW'
-WHERE loan_application_id = {{ReviewState.currentContract?.loan_application_id}}
-  AND status = 'IN_PROGRESS_1ST';
+  status = CASE 
+    WHEN status = 'IN_PROGRESS_1ST_RECEIVED' THEN 'RECEIVED' 
+    ELSE 'PENDING_1ST_REVIEW' 
+  END
+WHERE loan_application_id = {{ReviewState.currentContract?.loan_application_id}};

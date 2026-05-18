@@ -1,14 +1,19 @@
 UPDATE production.received_contracts
-SET
+SET 
   first_reviewed_by = {{appsmith.user.email}},
   locked_at = NOW(),
-  status = 'IN_PROGRESS_1ST'
+  status = CASE 
+    WHEN status = 'RECEIVED' THEN 'IN_PROGRESS_1ST_RECEIVED'
+    ELSE 'IN_PROGRESS_1ST'
+  END
 WHERE loan_application_id = (
-  SELECT loan_application_id
+  SELECT loan_application_id 
   FROM production.received_contracts
-  WHERE status = 'PENDING_1ST_REVIEW'
-    AND (locked_at IS NULL OR locked_at < NOW() - INTERVAL '15 minutes')
-  ORDER BY approval_date ASC
+  WHERE status IN ('PENDING_1ST_REVIEW', 'RECEIVED')
+    AND first_review_date IS NULL
+    AND second_review_date IS NULL
+    AND (locked_at IS NULL OR locked_at < NOW() - INTERVAL '10 minutes')
+  ORDER BY approval_date ASC 
   LIMIT 1
   FOR UPDATE SKIP LOCKED
 )
