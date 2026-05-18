@@ -1,0 +1,6 @@
+SELECT COALESCE(MAX((obj->>'target')::INTEGER), 0) as target
+FROM production.contract_shifts s,
+     jsonb_array_elements(s.active_officers) as ao(obj)
+WHERE s.status = 'OPEN' 
+  AND s.shift_type = 'FIRST_REVIEW'
+  AND obj->>'email' = {{appsmith.user.email}};

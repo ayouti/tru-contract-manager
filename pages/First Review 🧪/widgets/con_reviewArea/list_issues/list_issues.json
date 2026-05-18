@@ -79,6 +79,11 @@
       "key": "listData"
     }
   ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "primaryKeys"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "enhancements": true,
   "flexVerticalAlignment": "start",
@@ -106,7 +111,7 @@
   "parentColumnSpace": 14.59375,
   "parentId": "ah1ru6i46h",
   "parentRowSpace": 10,
-  "primaryKeys": "{{list_issues.listData.map((currentItem, currentIndex) => currentItem[\"Category\"] + '-' + currentItem[\"Subcategory\"] + '-' + currentItem[\"Issue\"] )}}",
+  "primaryKeys": "{{list_issues.listData.map((currentItem, currentIndex) => currentItem[\"category\"] + '-' + currentItem[\"subcategory\"] + '-' + currentItem[\"issue\"] )}}",
   "renderMode": "CANVAS",
   "requiresFlatWidgetChildren": true,
   "responsiveBehavior": "fill",

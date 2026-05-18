@@ -1,5 +1,0 @@
-/* SELECT
-  (SELECT COUNT(*) FROM production.received_contracts WHERE first_reviewed_by = {{appsmith.user.email}} AND status IN ('REVIEWED_1ST', 'RECEIVED') AND first_review_date >= CURRENT_DATE) as completed,
-  (SELECT target FROM jsonb_array_elements(active_officers) as ao(obj) CROSS JOIN production.contract_shifts s WHERE s.status = 'OPEN' AND obj->>'email' = {{appsmith.user.email}} LIMIT 1) as target;
-	
-	*/

@@ -3,51 +3,90 @@ export default {
 	rawDiscrepancies: [],
 	selectedIssues: [],
 	progress: { completed: 0, target: 0 },
+	isEditing: false,
+	chkNoDiscrepanciesDefault: false, // Tracks dynamic checkbox state
 
-	async init() {
+	init: async () => {
 		await fetch_discrepancies.run();
-		this.rawDiscrepancies = fetch_discrepancies.data || [];
-		await this.refreshProgress();
-	},
-
-	async refreshProgress() {
-		const res = await get_progress.run();
-		if (res && res.length > 0) {
-			this.progress = {
-				completed: res[0].completed || 0,
-				target: res[0].target || 0
-			};
-		}
+		ReviewState.rawDiscrepancies = fetch_discrepancies.data || [];
 	},
 
 	async handleMainAction() {
-		if (this.currentContract) {
-			// We are SUBMITTING
-			if (!chk_noDiscrepancies.isChecked && this.selectedIssues.length === 0) {
-				showAlert('Please select discrepancies or check "No discrepancies found".', 'error');
-				return;
+		// Case: Manual fetch when form is completely empty
+		if (!this.currentContract) {
+			const res = await get_next_contract.run();
+			if (res && res.length > 0) {
+				this.currentContract = res[0];
+				showAlert('Contract loaded.', 'info');
+			} else {
+				showAlert('Queue is empty! No pending contracts right now.', 'warning');
 			}
-			await submit_review.run();
-			showAlert('Review submitted successfully!', 'success');
-
-			// Clear current state
-			this.currentContract = null;
-			this.selectedIssues = [];
-			resetWidget('chk_noDiscrepancies', true);
-			resetWidget('select_category', true);
-			resetWidget('select_subcategory', true);
-			await this.refreshProgress();
+			return;
 		}
 
-		// Fetch Next Contract
+		// Validation Guard
+		if (!chk_noDiscrepancies.isChecked && this.selectedIssues.length === 0) {
+			showAlert('Please select discrepancies or check "No discrepancies found".', 'error');
+			return;
+		}
+
+		// Execute submission/resubmission
+		await submit_review.run();
+		await get_submissions.run();
+		showAlert(this.isEditing ? 'Changes saved successfully!' : 'Review submitted successfully!', 'success');
+
+		// Reset working states
+		this.selectedIssues = [];
+		this.isEditing = false;
+		this.chkNoDiscrepanciesDefault = false;
+
+		resetWidget('chk_noDiscrepancies', true);
+		resetWidget('select_category', true);
+		resetWidget('select_subcategory', true);
+
+		// Chain next contract pickup (Handles Point 3, 4, and 7)
 		const res = await get_next_contract.run();
 		if (res && res.length > 0) {
 			this.currentContract = res[0];
-			navigateTo('https://dash.trufinance.app/loan-applications/' + res[0].loan_application_id + '?tab=kyc', {}, 'NEW_WINDOW');
-			showAlert('Contract loaded.', 'info');
 		} else {
-			showAlert('Queue is empty! No pending contracts right now.', 'warning');
+			this.currentContract = null; // Explicitly clears card display area
+			showAlert('Queue is empty! No more pending contracts available.', 'warning');
 		}
+		await this.refreshProgress();
+	},
+
+	async startEditing(row) {
+		// If an active unsubmitted queue item is open, release it back to pool
+		if (this.currentContract && !this.isEditing) {
+			await unlock_current_contract.run();
+		}
+
+		this.currentContract = row;
+		this.selectedIssues = row.first_review_discrepancies || [];
+		this.isEditing = true;
+
+		// Check box only if old contract was submitted with clean records
+		this.chkNoDiscrepanciesDefault = (this.selectedIssues.length === 0);
+
+		closeModal(modal_history.name);
+		resetWidget('chk_noDiscrepancies', true);
+		resetWidget('select_category', true);
+		resetWidget('select_subcategory', true);
+	},
+
+	cancelEditing() {
+		this.clearReviewState();
+		showAlert('Editing cancelled.', 'info');
+	},
+
+	clearReviewState() {
+		this.currentContract = null;
+		this.selectedIssues = [];
+		this.isEditing = false;
+		this.chkNoDiscrepanciesDefault = false;
+		resetWidget('chk_noDiscrepancies', true);
+		resetWidget('select_category', true);
+		resetWidget('select_subcategory', true);
 	},
 
 	toggleIssue(issueObj) {
@@ -58,30 +97,32 @@ export default {
 																										 );
 
 		if (existsIndex > -1) {
-			// Remove it
 			this.selectedIssues.splice(existsIndex, 1);
 		} else {
-			// Add it
 			this.selectedIssues.push(issueObj);
-			// Auto-uncheck the "No discrepancies" box if it was checked
 			if (chk_noDiscrepancies.isChecked) {
+				this.chkNoDiscrepanciesDefault = false;
 				resetWidget('chk_noDiscrepancies', true);
 			}
 		}
+	},
+
+	getCategories() {
+		const cats = [...new Set(this.rawDiscrepancies.map(item => item.category))];
+		return cats.filter(Boolean).map(c => ({ label: c, value: c }));
 	},
 
 	getSubcategories() {
 		if (!select_category.selectedOptionValue) return [];
 		const filtered = this.rawDiscrepancies.filter(item => item.category === select_category.selectedOptionValue);
 		const subs = [...new Set(filtered.map(item => item.subcategory))];
-		return subs.map(s => ({ label: s, value: s }));
+		return subs.filter(Boolean).map(s => ({ label: s, value: s }));
 	},
 
-	getIssuesForList() {
-		if (!select_category.selectedOptionValue || !select_subcategory.selectedOptionValue) return [];
-		return this.rawDiscrepancies.filter(item =>
-																				item.category === select_category.selectedOptionValue &&
-																				item.subcategory === select_subcategory.selectedOptionValue
-																			 );
+	getIssuesForList: () => {
+		const cat = select_category.selectedOptionValue;
+		const sub = select_subcategory.selectedOptionValue;
+
+		return ReviewState.rawDiscrepancies.filter(item => item.category === cat && item.subcategory === sub);
 	}
 }

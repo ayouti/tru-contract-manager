@@ -1,0 +1,11 @@
+SELECT loan_application_id, customer_name, agent_name, first_review_date, first_review_discrepancies, status
+FROM production.received_contracts
+WHERE first_reviewed_by = {{appsmith.user.email}}
+  AND status = 'REVIEWED_1ST'
+  AND (
+    first_review_shift_id IS NULL 
+    OR first_review_shift_id = (
+      SELECT shift_id FROM production.contract_shifts WHERE status = 'OPEN' AND shift_type = 'FIRST_REVIEW' ORDER BY shift_id DESC LIMIT 1
+    )
+  )
+ORDER BY first_review_date DESC;

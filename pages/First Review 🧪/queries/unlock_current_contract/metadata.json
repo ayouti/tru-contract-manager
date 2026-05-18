@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6904abf885bff76d9e2e3f75_a1b2c3d4-1111-2222-3333-444455556669",
-  "id": "First Review 🧪_get_progress",
+  "gitSyncId": "6904abf885bff76d9e2e3f75_770a61e7-82db-4a11-b150-45012824d3e0",
+  "id": "First Review 🧪_unlock_current_contract",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "/* SELECT\n  (SELECT COUNT(*) FROM production.received_contracts WHERE first_reviewed_by = {{appsmith.user.email}} AND status IN ('REVIEWED_1ST', 'RECEIVED') AND first_review_date >= CURRENT_DATE) as completed,\n  (SELECT target FROM jsonb_array_elements(active_officers) as ao(obj) CROSS JOIN production.contract_shifts s WHERE s.status = 'OPEN' AND obj->>'email' = {{appsmith.user.email}} LIMIT 1) as target;\n\t\n\t*/",
+      "body": "UPDATE production.received_contracts\nSET \n  first_reviewed_by = NULL,\n  locked_at = NULL,\n  status = 'PENDING_1ST_REVIEW'\nWHERE loan_application_id = {{ReviewState.currentContract?.loan_application_id}}\n  AND status = 'IN_PROGRESS_1ST';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "name": "get_progress",
+    "name": "unlock_current_contract",
     "pageId": "First Review 🧪",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

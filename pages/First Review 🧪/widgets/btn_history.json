@@ -1,0 +1,65 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "buttonColor": "{{ ReviewState.isEditing ? '#b91c1c' : appsmith.theme.colors.primaryColor }}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "iconName"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "iconName"
+    },
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "{{ ReviewState.isEditing ? 'delete' : 'history' }}",
+  "isDisabled": "{{!get_submissions.data || get_submissions.data.length === 0}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "843304fzug",
+  "leftColumn": 60,
+  "minWidth": 50,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 60,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "onClick": "{{ReviewState.isEditing ? ReviewState.cancelEditing()\n: showModal(modal_history.name) }}",
+  "parentColumnSpace": 14.59375,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "topRow": 1,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "vrrdugnr0d",
+  "widgetName": "btn_history"
+}

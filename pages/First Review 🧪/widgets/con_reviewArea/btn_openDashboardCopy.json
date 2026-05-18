@@ -50,7 +50,7 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
   "rightColumn": 64,
-  "tooltip": "<strong>Flagged Issues:</strong><br />\n{{ReviewState.selectedIssues.map(item => \n    `• ${item.category} - ${item.subcategory} - ${item.issue}`\n  ).join('<br />')}}",
+  "tooltip": "{{ReviewState.selectedIssues.length>0 ? ('<strong>Flagged Issues:</strong><br />' + ReviewState.selectedIssues.map(item => `• ${item.category} - ${item.subcategory} - ${item.issue}`).join('<br />')\n) : '' }}",
   "topRow": 11,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,

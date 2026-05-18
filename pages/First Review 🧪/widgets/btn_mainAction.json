@@ -15,11 +15,17 @@
     },
     {
       "key": "text"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "onClick"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -27,8 +33,10 @@
       "key": "onClick"
     }
   ],
+  "iconAlign": "left",
+  "iconName": "",
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{ ReviewState.currentContract && !chk_noDiscrepancies.isChecked && ReviewState.selectedIssues.length === 0 }}",
   "isLoading": false,
   "isVisible": true,
   "key": "inezsvfg5s",
@@ -49,7 +57,7 @@
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
   "rightColumn": 26,
-  "text": "{{ReviewState.currentContract ? 'Submit & Get Next' : 'Get Contract'}}",
+  "text": "{{ReviewState.isEditing ? 'Resubmit & Get Next' : (ReviewState.currentContract ? 'Submit & Get Next' : 'Get Contract')}}",
   "topRow": 1,
   "type": "BUTTON_WIDGET",
   "version": 1,

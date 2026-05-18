@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6904abf885bff76d9e2e3f75_bfb1ac85-7c62-4632-b2ba-529ce6e7cc72",
-  "id": "First Review 🧪_ReviewState.toggleIssue",
+  "gitSyncId": "6904abf885bff76d9e2e3f75_6206664f-fb76-4c75-b2db-152e03b4b448",
+  "id": "First Review 🧪_ReviewState.startEditing",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,7 +8,7 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "issueObj"
+          "name": "row"
         }
       ],
       "paginationType": "NONE",
@@ -26,8 +26,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "ReviewState.toggleIssue",
-    "name": "toggleIssue",
+    "fullyQualifiedName": "ReviewState.startEditing",
+    "name": "startEditing",
     "pageId": "First Review 🧪",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

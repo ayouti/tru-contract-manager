@@ -1,6 +1,10 @@
 UPDATE production.received_contracts
-SET
+SET 
   status = 'REVIEWED_1ST',
   first_review_date = NOW(),
-  first_review_discrepancies = {{JSON.stringify(ReviewState.selectedIssues)}}::jsonb
+  first_review_discrepancies = {{JSON.stringify(ReviewState.selectedIssues)}}::jsonb,
+  first_review_shift_id = COALESCE(
+    first_review_shift_id, 
+    (SELECT shift_id FROM production.contract_shifts WHERE status = 'OPEN' AND shift_type = 'FIRST_REVIEW' ORDER BY shift_id DESC LIMIT 1)
+  )
 WHERE loan_application_id = {{ReviewState.currentContract.loan_application_id}};

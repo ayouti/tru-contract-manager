@@ -1,0 +1,1 @@
+SELECT first_review_shift_id, first_reviewed_by, loan_application_id FROM production.received_contracts WHERE first_review_shift_id = 13

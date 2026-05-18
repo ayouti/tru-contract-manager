@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6904abf885bff76d9e2e3f75_a1b2c3d4-1111-2222-3333-44445555666c",
-  "id": "First Review 🧪_ReviewState.refreshProgress",
+  "gitSyncId": "6904abf885bff76d9e2e3f75_cf1430e5-4810-4b55-a63c-7f34f2a1bc8e",
+  "id": "First Review 🧪_ReviewState.getCategories",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "ReviewState.refreshProgress",
-    "name": "refreshProgress",
+    "fullyQualifiedName": "ReviewState.getCategories",
+    "name": "getCategories",
     "pageId": "First Review 🧪",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

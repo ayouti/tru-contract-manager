@@ -1,5 +1,5 @@
 {
-  "gitSyncId": "6904abf885bff76d9e2e3f75_a1b2c3d4-1111-2222-3333-44445555666a",
+  "gitSyncId": "6904abf885bff76d9e2e3f75_e42a6505-a97c-483e-ac02-6f7bd14c9569",
   "id": "First Review 🧪_ReviewState",
   "unpublishedCollection": {
     "name": "ReviewState",
@@ -22,6 +22,14 @@
       {
         "name": "progress",
         "value": "{\n  completed: 0,\n  target: 0\n}"
+      },
+      {
+        "name": "isEditing",
+        "value": "false"
+      },
+      {
+        "name": "chkNoDiscrepanciesDefault",
+        "value": "false"
       }
     ]
   }
