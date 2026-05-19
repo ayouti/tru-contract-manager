@@ -1,4 +1,4 @@
-SELECT loan_application_id, customer_name, agent_name, first_review_date, first_review_discrepancies, status
+SELECT loan_application_id, customer_name, agent_name, first_review_date, first_review_discrepancies, status, first_review_override_by
 FROM production.received_contracts
 WHERE first_reviewed_by = {{appsmith.user.email}}
   AND status = 'REVIEWED_1ST'

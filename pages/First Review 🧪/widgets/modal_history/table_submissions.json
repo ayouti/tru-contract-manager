@@ -38,13 +38,14 @@
     "first_review_date",
     "first_review_discrepancies",
     "status",
+    "first_review_override_by",
     "customColumn1"
   ],
-  "columnUpdatedAt": 1779025487280,
+  "columnUpdatedAt": 1779197835168,
   "columnWidthMap": {
-    "agent_name": 206,
-    "customColumn1": 60,
-    "customer_name": 197,
+    "agent_name": 218,
+    "customColumn1": 73,
+    "customer_name": 219,
     "loan_application_id": 104
   },
   "compactMode": "SHORT",
@@ -95,6 +96,15 @@
     },
     {
       "key": "primaryColumns.status.computedValue"
+    },
+    {
+      "key": "primaryColumns.customColumn1.iconName"
+    },
+    {
+      "key": "primaryColumns.first_review_override_by.computedValue"
+    },
+    {
+      "key": "primaryColumns.customColumn1.isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -103,6 +113,15 @@
     },
     {
       "key": "primaryColumns.customColumn1.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn1.iconName"
+    },
+    {
+      "key": "primaryColumns.customColumn1.buttonColor"
+    },
+    {
+      "key": "primaryColumns.customColumn1.isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -172,7 +191,7 @@
       "allowSameOptionsInNewRow": true,
       "borderRadius": "{{table_submissions.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
       "boxShadow": "{{table_submissions.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
-      "buttonColor": "{{table_submissions.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonColor": "{{(() => { const tableData = table_submissions.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.first_review_override_by ? '#d4d4d8' : appsmith.theme.colors.primaryColor)) : currentRow.first_review_override_by ? '#d4d4d8' : appsmith.theme.colors.primaryColor })()}}",
       "buttonStyle": "rgb(3, 179, 101)",
       "buttonVariant": "TERTIARY",
       "columnType": "iconButton",
@@ -183,13 +202,13 @@
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "iconName": "annotation",
+      "iconName": "{{(() => { const tableData = table_submissions.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.first_review_override_by ? 'lock' : 'annotation')) : currentRow.first_review_override_by ? 'lock' : 'annotation' })()}}",
       "id": "customColumn1",
       "index": 6,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": true,
-      "isDisabled": false,
+      "isDisabled": "{{(() => { const tableData = table_submissions.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (!!currentRow.first_review_override_by)) : !!currentRow.first_review_override_by })()}}",
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
@@ -257,7 +276,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "first_review_date",
       "notation": "standard",
       "originalId": "first_review_date",
@@ -288,11 +307,45 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "first_review_discrepancies",
       "notation": "standard",
       "originalId": "first_review_discrepancies",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "first_review_override_by": {
+      "alias": "first_review_override_by",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = table_submissions.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"first_review_override_by\"])) : first_review_override_by })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "first_review_override_by",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "first_review_override_by",
+      "notation": "standard",
+      "originalId": "first_review_override_by",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -350,7 +403,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "status",
       "notation": "standard",
       "originalId": "status",

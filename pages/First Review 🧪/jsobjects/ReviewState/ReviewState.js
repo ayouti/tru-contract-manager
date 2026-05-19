@@ -48,6 +48,7 @@ export default {
 		const res = await get_next_contract.run();
 		if (res && res.length > 0) {
 			this.currentContract = res[0];
+			navigateTo('https://dash.trufinance.app/loan-applications/' + ReviewState.currentContract?.loan_application_id + '?tab=kyc', {}, 'NEW_WINDOW');
 		} else {
 			this.currentContract = null; // Explicitly clears card display area
 			showAlert('Queue is empty! No more pending contracts available.', 'warning');
