@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT DISTINCT shipment_number FROM production.received_contracts WHERE status='PENDING_1ST_REVIEW' AND received_by ILIKE '%trufinance%'",
+      "body": "UPDATE production.received_contracts\nSET \n    status = 'REVIEWED_2ND',\n    second_review_date = shipment_received_date,\n    second_reviewed_by = 'SYSTEM_MIGRATION',\n    second_review_discrepancies = '[]'::jsonb\nWHERE status = 'RECEIVED'\n  AND shipment_number IS NOT NULL\n  AND shipment_received_date < '2026-05-01';",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

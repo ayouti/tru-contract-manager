@@ -1,1 +1,9 @@
-SELECT DISTINCT shipment_number FROM production.received_contracts WHERE status='PENDING_1ST_REVIEW' AND received_by ILIKE '%trufinance%'
+UPDATE production.received_contracts
+SET 
+    status = 'REVIEWED_2ND',
+    second_review_date = shipment_received_date,
+    second_reviewed_by = 'SYSTEM_MIGRATION',
+    second_review_discrepancies = '[]'::jsonb
+WHERE status = 'RECEIVED'
+  AND shipment_number IS NOT NULL
+  AND shipment_received_date < '2026-05-01';

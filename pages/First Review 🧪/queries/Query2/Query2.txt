@@ -1,1 +1,16 @@
-SELECT first_review_shift_id, first_reviewed_by, loan_application_id FROM production.received_contracts WHERE first_review_shift_id = 13
+UPDATE production.received_contracts
+SET 
+    -- First Review Backfill
+    first_reviewed_by = 'SYSTEM_MIGRATION',
+    first_review_shift_id = 0,
+    first_review_date = shipment_received_date,
+    first_review_discrepancies = '[]'::jsonb,
+
+    -- Second Review Backfill
+		status = 'REVIEWED_2ND',
+    second_review_date = shipment_received_date,
+    second_reviewed_by = 'SYSTEM_MIGRATION',
+    second_review_discrepancies = '[]'::jsonb
+
+WHERE shipment_number IS NOT NULL
+  AND drawer_number IS NULL;

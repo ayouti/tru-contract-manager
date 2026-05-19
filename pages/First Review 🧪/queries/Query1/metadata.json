@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE production.received_contracts\nSET\n  status = 'PENDING_1ST_REVIEW',\n  locked_at = NULL,\n  first_reviewed_by = NULL,\n  first_review_date = NULL,\n  first_review_discrepancies = NULL\nWHERE status IN ('IN_PROGRESS_1ST', 'REVIEWED_1ST')\nRETURNING loan_application_id",
+      "body": "SELECT * FROM production.received_contracts WHERE second_reviewed_by='SYSTEM_MIGRATION'-- GROUP BY second_reviewed_by \nLIMIT 20",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

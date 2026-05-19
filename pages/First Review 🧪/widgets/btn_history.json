@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 4,
   "boxShadow": "none",
   "buttonColor": "{{ ReviewState.isEditing ? '#b91c1c' : appsmith.theme.colors.primaryColor }}",
   "buttonVariant": "TERTIARY",
@@ -57,7 +57,7 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
   "rightColumn": 64,
-  "topRow": 1,
+  "topRow": 0,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "vrrdugnr0d",
