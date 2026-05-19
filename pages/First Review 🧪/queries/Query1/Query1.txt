@@ -1,2 +1,2 @@
-SELECT * FROM production.received_contracts WHERE second_reviewed_by='SYSTEM_MIGRATION'-- GROUP BY second_reviewed_by 
+SELECT * FROM production.received_contracts WHERE first_reviewed_by ilike '%agent%'-- GROUP BY second_reviewed_by 
 LIMIT 20
