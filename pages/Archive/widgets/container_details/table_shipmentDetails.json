@@ -36,12 +36,13 @@
     "customer_name",
     "customer_national_id",
     "received_by",
+    "first_reviewed_by",
     "customColumn2",
     "pn_revision_id",
     "loan_application_id",
     "approval_limit"
   ],
-  "columnUpdatedAt": 1772096966434,
+  "columnUpdatedAt": 1779271524961,
   "columnWidthMap": {
     "customColumn1": 60,
     "customer_name": 237,
@@ -107,6 +108,9 @@
     },
     {
       "key": "primaryColumns.approval_limit.computedValue"
+    },
+    {
+      "key": "primaryColumns.first_reviewed_by.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -151,8 +155,8 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 62,
-  "originalTopRow": 5,
+  "originalBottomRow": 60,
+  "originalTopRow": 4,
   "parentColumnSpace": 14.5625,
   "parentId": "wdunazygk9",
   "parentRowSpace": 10,
@@ -192,7 +196,7 @@
       "width": 150
     },
     "customColumn1": {
-      "alias": "",
+      "alias": ".",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "buttonStyle": "rgb(3, 179, 101)",
@@ -324,6 +328,40 @@
       "label": "NID",
       "notation": "standard",
       "originalId": "customer_national_id",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "first_reviewed_by": {
+      "alias": "first_reviewed_by",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = table_shipmentDetails.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.first_reviewed_by?.split('@')[0] || '')) : currentRow.first_reviewed_by?.split('@')[0] || '' })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "first_reviewed_by",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Reviewed By",
+      "notation": "standard",
+      "originalId": "first_reviewed_by",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",

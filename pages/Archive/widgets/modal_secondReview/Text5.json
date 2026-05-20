@@ -39,7 +39,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 53,
   "shouldTruncate": false,
-  "text": "Loan Application: {{SecondReview.currentContract?.loan_application_id}}",
+  "text": "Loan Application: {{SecondReview.currentContract}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 1,

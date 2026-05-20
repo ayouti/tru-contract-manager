@@ -62,7 +62,7 @@
       "key": "isVisible"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT_WITH_LIMITS",
+  "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
@@ -72,7 +72,7 @@
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
   "isLoading": false,
-  "isVisible": "{{!get_shipments_old.isLoading && !!table_shipments.selectedRow?.shipment_number}}",
+  "isVisible": "{{!get_shipments.isLoading && !!table_shipments.selectedRow?.shipment_number}}",
   "key": "73f2sbabz9",
   "leftColumn": 20,
   "maxDynamicHeight": 70,
@@ -83,8 +83,6 @@
   "mobileRightColumn": 54,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 67,
-  "originalTopRow": 0,
   "parentColumnSpace": 14.5625,
   "parentId": "0",
   "parentRowSpace": 10,

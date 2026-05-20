@@ -1,6 +1,6 @@
 {
   "gitSyncId": "6904abf885bff76d9e2e3f75_c1068bae-0a42-4933-bf00-a7a3a90ad405",
-  "id": "Archive_SecondReview.handleRevise",
+  "id": "Archive_SecondReview.reviseContract",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -26,8 +26,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "SecondReview.handleRevise",
-    "name": "handleRevise",
+    "fullyQualifiedName": "SecondReview.reviseContract",
+    "name": "reviseContract",
     "pageId": "Archive",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

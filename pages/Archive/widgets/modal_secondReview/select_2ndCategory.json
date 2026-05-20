@@ -50,7 +50,7 @@
   "mobileRightColumn": 50,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "onOptionChange": "{{resetWidget('select_overrideSubcategory', true)}}",
+  "onOptionChange": "{{resetWidget('select_2ndSubcategory', true)}}",
   "optionLabel": "label",
   "optionValue": "value",
   "originalBottomRow": 19,
