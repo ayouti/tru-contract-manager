@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 7,
+  "bottomRow": 5,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -41,7 +41,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 53,
   "shouldTruncate": false,
-  "text": "Loan Application: {{SecondReview.currentContract}}",
+  "text": "Loan Application: {{SecondReview.currentContract.loan_application_id}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 1,

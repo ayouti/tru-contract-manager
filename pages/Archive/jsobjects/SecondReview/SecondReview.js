@@ -11,12 +11,12 @@ export default {
 		}
 	},
 
-	async reviseContract(loan, nid) {
+	async reviseContract(row) {
 		await this.init();
-		this.currentContract = loan;
+		this.currentContract = row;
 
-		navigateTo('https://trufinance.app/dash/loans/pndashboard/?q=' + loan, {}, 'NEW_WINDOW');
-		navigateTo('https://trufinance.app/dash/loans/loanapplication/' + loan + '/change/', {}, 'NEW_WINDOW');
+		navigateTo('https://trufinance.app/dash/loans/pndashboard/?q=' + row.loan_application_id, {}, 'NEW_WINDOW');
+		navigateTo('https://trufinance.app/dash/loans/loanapplication/' + row.loan_application_id + '/change/', {}, 'NEW_WINDOW');
 
 		// Load existing 2nd review discrepancies if revising again, otherwise empty
 		this.selectedIssues = row.second_review_discrepancies || [];

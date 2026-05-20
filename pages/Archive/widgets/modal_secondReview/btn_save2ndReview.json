@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 69,
+  "bottomRow": 66,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonStyle": "PRIMARY_BUTTON",
@@ -48,7 +48,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 64,
   "text": "Save Changes",
-  "topRow": 65,
+  "topRow": 62,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "p0vaum3dr8",
