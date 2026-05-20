@@ -1,0 +1,7 @@
+UPDATE production.received_contracts
+SET 
+  status = 'REVIEWED_2ND',
+  second_review_date = NOW(),
+  second_reviewed_by = {{appsmith.user.email}},
+  second_review_discrepancies = {{JSON.stringify(this.params.discrepancies)}}::jsonb
+WHERE loan_application_id = {{this.params.loan_application_id}};

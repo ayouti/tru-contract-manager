@@ -255,7 +255,7 @@
       "label": "PN Revision",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{currentRow.pn_revision_id ? '': Contracts.reviseContract(currentRow.loan_application_id, currentRow.customer_national_id)}}",
+      "onClick": "{{currentRow.pn_revision_id ? '': SecondReview.reviseContract(currentRow.loan_application_id, currentRow.customer_national_id)}}",
       "originalId": "customColumn2",
       "sticky": "",
       "textSize": "0.875rem",

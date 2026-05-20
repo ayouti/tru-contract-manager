@@ -1,4 +1,0 @@
-{
-	"action": "archive_shipment",
-	"shipmentNumber": {{ this.params.shipmentNumber }}
-}

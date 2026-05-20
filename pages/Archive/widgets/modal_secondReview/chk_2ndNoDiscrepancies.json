@@ -1,0 +1,63 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 11,
+  "defaultCheckedState": "{{SecondReview.currentContract && SecondReview.selectedIssues.length === 0}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultCheckedState"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onCheckChange"
+    },
+    {
+      "key": "defaultCheckedState"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onCheckChange"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "d2edqq9hrz",
+  "label": "No Discrepancies Found",
+  "labelPosition": "Right",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 12,
+  "mobileTopRow": 3,
+  "needsErrorInfo": false,
+  "onCheckChange": "{{ chk_2ndNoDiscrepancies.isChecked ? SecondReview.selectedIssues = [] : '' }}",
+  "originalBottomRow": 11,
+  "originalTopRow": 7,
+  "parentColumnSpace": 14.28125,
+  "parentId": "d5azbh137n",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "topRow": 7,
+  "type": "CHECKBOX_WIDGET",
+  "version": 1,
+  "widgetId": "tfhv614wyk",
+  "widgetName": "chk_2ndNoDiscrepancies"
+}

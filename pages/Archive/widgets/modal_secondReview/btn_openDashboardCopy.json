@@ -1,0 +1,59 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 15,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "tooltip"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "list",
+  "isDisabled": "{{SecondReview.selectedIssues.length===0}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "vd2j6rspvp",
+  "leftColumn": 59,
+  "minWidth": 50,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 61,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClick": "",
+  "originalBottomRow": 15,
+  "originalTopRow": 11,
+  "parentColumnSpace": 14.28125,
+  "parentId": "d5azbh137n",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "tooltip": "{{SecondReview.selectedIssues.length>0 ? ('<strong>Flagged Issues:</strong><br />' + SecondReview.selectedIssues.map(item => `• ${item.category} - ${item.subcategory} - ${item.issue}`).join('<br />')\n) : '' }}",
+  "topRow": 11,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "qi66rj9mbc",
+  "widgetName": "btn_openDashboardCopy"
+}

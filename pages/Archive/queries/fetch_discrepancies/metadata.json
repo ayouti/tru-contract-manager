@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6904abf885bff76d9e2e3f75_4f4d197a-e0d9-4cb8-aa45-7e395420233f",
-  "id": "Archive_archive_shipment_old",
+  "gitSyncId": "6904abf885bff76d9e2e3f75_a205b86a-af2e-4d54-9bca-3c867f6b361e",
+  "id": "Archive_fetch_discrepancies",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -11,17 +11,17 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n\t\"action\": \"archive_shipment\",\n\t\"shipmentNumber\": {{ this.params.shipmentNumber }}\n}",
+      "body": "{\n\taction: \"get_discrepancies\"\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
         "apiContentType": "application/json"
       },
       "headers": [],
-      "httpMethod": "POST",
+      "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/webhook/8be7bb7f-5e7e-4427-a679-97f788998f1a",
+      "path": "/webhook/5cffcefd-0c4b-47bb-9957-25277b1f5bc6",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -39,12 +39,8 @@
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "archive_shipment_old",
+    "dynamicBindingPathList": [],
+    "name": "fetch_discrepancies",
     "pageId": "Archive",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
