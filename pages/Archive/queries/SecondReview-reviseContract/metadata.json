@@ -8,7 +8,10 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "row"
+          "name": "loan"
+        },
+        {
+          "name": "nid"
         }
       ],
       "paginationType": "NONE",
