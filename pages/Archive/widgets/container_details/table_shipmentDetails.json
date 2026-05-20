@@ -40,9 +40,10 @@
     "customColumn2",
     "pn_revision_id",
     "loan_application_id",
-    "approval_limit"
+    "approval_limit",
+    "first_review_discrepancies"
   ],
-  "columnUpdatedAt": 1779274718476,
+  "columnUpdatedAt": 1779282422462,
   "columnWidthMap": {
     "customColumn1": 60,
     "customer_name": 237,
@@ -111,6 +112,9 @@
     },
     {
       "key": "primaryColumns.first_reviewed_by.computedValue"
+    },
+    {
+      "key": "primaryColumns.first_review_discrepancies.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -155,8 +159,8 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 61,
-  "originalTopRow": 5,
+  "originalBottomRow": 60,
+  "originalTopRow": 4,
   "parentColumnSpace": 14.5625,
   "parentId": "wdunazygk9",
   "parentRowSpace": 10,
@@ -328,6 +332,40 @@
       "label": "NID",
       "notation": "standard",
       "originalId": "customer_national_id",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "first_review_discrepancies": {
+      "alias": "first_review_discrepancies",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = table_shipmentDetails.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"first_review_discrepancies\"])) : first_review_discrepancies })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "first_review_discrepancies",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "first_review_discrepancies",
+      "notation": "standard",
+      "originalId": "first_review_discrepancies",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",

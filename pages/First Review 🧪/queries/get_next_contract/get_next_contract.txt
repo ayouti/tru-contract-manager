@@ -9,14 +9,15 @@ SET
 WHERE loan_application_id = (
   SELECT loan_application_id 
   FROM production.received_contracts
-  WHERE first_review_date IS NULL
+	WHERE loan_application_id=1313844
+/*  WHERE first_review_date IS NULL
     AND second_review_date IS NULL
     AND (
       -- Condition 1: It's brand new
       status IN ('PENDING_1ST_REVIEW', 'RECEIVED') OR status IS NULL
       -- Condition 2: It was locked, but the lock expired (catches IN_PROGRESS ghosts)
       OR locked_at < NOW() - INTERVAL '10 minutes'
-    )
+    ) */
   ORDER BY approval_date ASC 
   LIMIT 1
   FOR UPDATE SKIP LOCKED
