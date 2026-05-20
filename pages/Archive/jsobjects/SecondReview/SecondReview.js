@@ -23,7 +23,7 @@ export default {
 		this.currentContract = loan;
 		
 		navigateTo('https://trufinance.app/dash/loans/pndashboard/?q=' + loan, {}, 'NEW_WINDOW');
-		navigateTo('https://trufinance.app/dash/loans/loanapplications/' + loan + '/change/', {}, 'NEW_WINDOW');
+		navigateTo('https://trufinance.app/dash/loans/loanapplication/' + loan + '/change/', {}, 'NEW_WINDOW');
 
 		// Load existing 2nd review discrepancies if revising again, otherwise empty
 		this.selectedIssues = row.second_review_discrepancies || [];
