@@ -1,2 +1,8 @@
-SELECT * FROM production.received_contracts WHERE first_reviewed_by ilike '%agent%'-- GROUP BY second_reviewed_by 
-LIMIT 20
+-- 1. Preserve original discrepancies for the email report
+ALTER TABLE production.received_contracts
+ADD COLUMN original_first_review_discrepancies JSONB;
+
+-- 2. Switch boolean flag to timestamp for the daily report
+ALTER TABLE production.contract_shifts 
+DROP COLUMN IF EXISTS reported,
+ADD COLUMN reported_at TIMESTAMP;

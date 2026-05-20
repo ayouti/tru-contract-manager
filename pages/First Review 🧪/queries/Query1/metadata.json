@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM production.received_contracts WHERE first_reviewed_by ilike '%agent%'-- GROUP BY second_reviewed_by \nLIMIT 20",
+      "body": "-- 1. Preserve original discrepancies for the email report\nALTER TABLE production.received_contracts\nADD COLUMN original_first_review_discrepancies JSONB;\n\n-- 2. Switch boolean flag to timestamp for the daily report\nALTER TABLE production.contract_shifts \nDROP COLUMN IF EXISTS reported,\nADD COLUMN reported_at TIMESTAMP;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

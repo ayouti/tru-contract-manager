@@ -43,7 +43,7 @@ export default {
 		this.currentContract = null;
 
 		// Replace 'get_slave_table_query' with the actual query that populates your Archive slave table
-		await get_slave_table_query.run(); 
+		await Shipments.getShipmentDetails.run();
 	},
 
 	toggleIssue(issueObj) {
