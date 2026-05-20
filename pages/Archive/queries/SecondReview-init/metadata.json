@@ -25,7 +25,7 @@
     "fullyQualifiedName": "SecondReview.init",
     "name": "init",
     "pageId": "Archive",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }
