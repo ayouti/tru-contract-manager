@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 60,
+  "bottomRow": 75,
   "bottomRowBeforeCollapse": 61,
   "boxShadow": "none",
   "canFreezeColumn": true,
@@ -42,7 +42,7 @@
     "loan_application_id",
     "approval_limit"
   ],
-  "columnUpdatedAt": 1779271524961,
+  "columnUpdatedAt": 1779274339842,
   "columnWidthMap": {
     "customColumn1": 60,
     "customer_name": 237,
@@ -479,7 +479,7 @@
   "searchKey": "",
   "tableData": "{{get_shipment_details.data}}",
   "textSize": "0.875rem",
-  "topRow": 4,
+  "topRow": 19,
   "topRowBeforeCollapse": 4,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",

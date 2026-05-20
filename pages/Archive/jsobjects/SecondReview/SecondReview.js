@@ -7,21 +7,14 @@ export default {
 		if (this.rawDiscrepancies.length === 0) {
 			await fetch_discrepancies.run();
 			const data = fetch_discrepancies.data;
-			if (Array.isArray(data)) {
-				this.rawDiscrepancies = data.map(item => ({
-					category: String(item.category || item.Category || '').trim(),
-					subcategory: String(item.subcategory || item.Subcategory || '').trim(),
-					issue: String(item.issue || item.Issue || '').trim(),
-					severity: String(item.severity || item.Severity || '').trim()
-				}));
-			}
+			this.rawDiscrepancies = data
 		}
 	},
 
 	async reviseContract(loan, nid) {
 		await this.init();
 		this.currentContract = loan;
-		
+
 		navigateTo('https://trufinance.app/dash/loans/pndashboard/?q=' + loan, {}, 'NEW_WINDOW');
 		navigateTo('https://trufinance.app/dash/loans/loanapplication/' + loan + '/change/', {}, 'NEW_WINDOW');
 
@@ -48,17 +41,17 @@ export default {
 		showAlert('Second review saved.', 'success');
 		closeModal(modal_secondReview.name);
 		this.currentContract = null;
-		
+
 		// Replace 'get_slave_table_query' with the actual query that populates your Archive slave table
 		await get_slave_table_query.run(); 
 	},
 
 	toggleIssue(issueObj) {
 		const existsIndex = this.selectedIssues.findIndex(i =>
-			i.category === issueObj.category &&
-			i.subcategory === issueObj.subcategory &&
-			i.issue === issueObj.issue
-		);
+																											i.category === issueObj.category &&
+																											i.subcategory === issueObj.subcategory &&
+																											i.issue === issueObj.issue
+																										 );
 
 		if (existsIndex > -1) {
 			this.selectedIssues.splice(existsIndex, 1);
@@ -86,8 +79,8 @@ export default {
 		const sub = select_2ndSubcategory.selectedOptionValue;
 		if (!cat || !sub) return [];
 		return this.rawDiscrepancies.filter(item =>
-			item.category.toLowerCase() === String(cat).trim().toLowerCase() &&
-			item.subcategory.toLowerCase() === String(sub).trim().toLowerCase()
-		);
+																				item.category.toLowerCase() === String(cat).trim().toLowerCase() &&
+																				item.subcategory.toLowerCase() === String(sub).trim().toLowerCase()
+																			 );
 	}
 }

@@ -3,7 +3,7 @@
   "alignWidget": "LEFT",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 11,
+  "bottomRow": 13,
   "defaultCheckedState": "{{SecondReview.currentContract && SecondReview.selectedIssues.length === 0}}",
   "dynamicBindingPathList": [
     {
@@ -55,7 +55,7 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
-  "topRow": 7,
+  "topRow": 9,
   "type": "CHECKBOX_WIDGET",
   "version": 1,
   "widgetId": "tfhv614wyk",

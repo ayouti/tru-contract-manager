@@ -42,7 +42,7 @@
     "dynamicBindingPathList": [],
     "name": "fetch_discrepancies",
     "pageId": "Archive",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

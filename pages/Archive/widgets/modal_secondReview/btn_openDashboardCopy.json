@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 15,
+  "bottomRow": 17,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "TERTIARY",
@@ -51,7 +51,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 64,
   "tooltip": "{{SecondReview.selectedIssues.length>0 ? ('<strong>Flagged Issues:</strong><br />' + SecondReview.selectedIssues.map(item => `• ${item.category} - ${item.subcategory} - ${item.issue}`).join('<br />')\n) : '' }}",
-  "topRow": 11,
+  "topRow": 13,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "qi66rj9mbc",
