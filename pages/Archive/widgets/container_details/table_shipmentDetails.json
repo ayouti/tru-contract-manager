@@ -41,9 +41,10 @@
     "pn_revision_id",
     "loan_application_id",
     "approval_limit",
-    "first_review_discrepancies"
+    "first_review_discrepancies",
+    "second_review_discrepancies"
   ],
-  "columnUpdatedAt": 1779282422462,
+  "columnUpdatedAt": 1779282645198,
   "columnWidthMap": {
     "customColumn1": 60,
     "customer_name": 237,
@@ -115,6 +116,9 @@
     },
     {
       "key": "primaryColumns.first_review_discrepancies.computedValue"
+    },
+    {
+      "key": "primaryColumns.second_review_discrepancies.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -502,6 +506,40 @@
       "label": "Received By",
       "notation": "standard",
       "originalId": "received_by",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "second_review_discrepancies": {
+      "alias": "second_review_discrepancies",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = table_shipmentDetails.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"second_review_discrepancies\"])) : second_review_discrepancies })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "second_review_discrepancies",
+      "index": 7,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "second_review_discrepancies",
+      "notation": "standard",
+      "originalId": "second_review_discrepancies",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
