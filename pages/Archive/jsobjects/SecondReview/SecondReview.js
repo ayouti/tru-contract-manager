@@ -15,7 +15,7 @@ export default {
 		await this.init();
 		this.currentContract = row;
 
-		navigateTo('https://trufinance.app/dash/loans/pndashboard/?q=' + row.loan_application_id, {}, 'NEW_WINDOW');
+		navigateTo('https://trufinance.app/dash/loans/pndashboard/?id=' + row.loan_application_id, {}, 'NEW_WINDOW');
 		navigateTo('https://trufinance.app/dash/loans/loanapplication/' + row.loan_application_id + '/change/', {}, 'NEW_WINDOW');
 
 		// Load existing 2nd review discrepancies if revising again, otherwise empty
