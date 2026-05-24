@@ -9,7 +9,6 @@ SET
 WHERE loan_application_id = (
   SELECT loan_application_id 
   FROM production.received_contracts
-	WHERE loan_application_id=1313844
   WHERE first_review_date IS NULL
     AND second_review_date IS NULL
     AND (
