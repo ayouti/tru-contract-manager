@@ -4,7 +4,7 @@
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 11,
-  "defaultCheckedState": "{{SecondReview.currentContract && SecondReview.selectedIssues.length === 0}}",
+  "defaultCheckedState": "{{ SecondReview.currentContract?.status === 'REVIEWED_2ND' && SecondReview.selectedIssues.length === 0 }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -47,14 +47,14 @@
   "mobileTopRow": 3,
   "needsErrorInfo": false,
   "onCheckChange": "{{ chk_2ndNoDiscrepancies.isChecked ? SecondReview.selectedIssues = [] : '' }}",
-  "originalBottomRow": 13,
-  "originalTopRow": 9,
+  "originalBottomRow": 14,
+  "originalTopRow": 10,
   "parentColumnSpace": 14.28125,
   "parentId": "d5azbh137n",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 38,
   "topRow": 7,
   "type": "CHECKBOX_WIDGET",
   "version": 1,

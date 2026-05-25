@@ -18,8 +18,12 @@ export default {
 		navigateTo('https://trufinance.app/dash/loans/pndashboard/?id=' + row.loan_application_id, {}, 'NEW_WINDOW');
 		navigateTo('https://trufinance.app/dash/loans/loanapplication/' + row.loan_application_id + '/change/', {}, 'NEW_WINDOW');
 
-		// Load existing 2nd review discrepancies if revising again, otherwise empty
-		this.selectedIssues = row.second_review_discrepancies.length > 0 ? row.second_review_discrepancies : row.first_review_discrepancies || [];
+		// Explicitly load 2nd review data if it was already reviewed, otherwise pull from 1st review
+		if (row.status === 'REVIEWED_2ND') {
+			this.selectedIssues = row.second_review_discrepancies || [];
+		} else {
+			this.selectedIssues = row.first_review_discrepancies || [];
+		}
 
 		showModal(modal_secondReview.name);
 		resetWidget('chk_2ndNoDiscrepancies', true);
