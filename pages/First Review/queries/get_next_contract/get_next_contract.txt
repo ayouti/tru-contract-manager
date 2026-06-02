@@ -16,8 +16,8 @@ WHERE loan_application_id = (
       status IN ('PENDING_1ST_REVIEW', 'RECEIVED') OR status IS NULL
       -- Condition 2: It was locked, but the lock expired (catches IN_PROGRESS ghosts)
       OR locked_at < NOW() - INTERVAL '10 minutes'
-			AND loan_application_id >= 1320418
     ) 
+			AND loan_application_id >= 1344249
   ORDER BY approval_date ASC 
   LIMIT 1
   FOR UPDATE SKIP LOCKED
