@@ -296,7 +296,7 @@
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
+      "horizontalAlignment": "CENTER",
       "id": "customColumn3",
       "index": 8,
       "isCellEditable": false,
