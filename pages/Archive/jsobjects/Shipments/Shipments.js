@@ -9,7 +9,7 @@ export default {
 		});
 
 		if (get_shipment_details.responseMeta.isExecutionSuccess) {
-			if (get_shipment_details.data.length > 0) {
+			if (get_shipment_details.data?.length > 0) {
 				table_shipmentDetails.setData(get_shipment_details.data);
 				table_shipmentDetails.setVisibility(true);
 				text_ShipmentStatus.setVisibility(true);

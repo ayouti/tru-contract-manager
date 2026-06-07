@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE production.received_contracts\nSET \n  status = 'REVIEWED_2ND',\n  second_review_date = NOW(),\n  second_reviewed_by = {{appsmith.user.email}},\n  second_review_discrepancies = {{JSON.stringify(this.params.discrepancies)}}::jsonb\nWHERE loan_application_id = {{this.params.loan_application_id}};",
+      "body": "UPDATE production.received_contracts\nSET \n  status = 'REVIEWED_2ND',\n  second_review_date = NOW(),\n  second_reviewed_by = {{appsmith.user.email}},\n  second_review_discrepancies = {{this.params.discrepancies}}::jsonb\nWHERE loan_application_id = {{this.params.loan_application_id}};",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
