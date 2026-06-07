@@ -13,21 +13,17 @@
       "key": "borderRadius"
     },
     {
-      "key": "isVisible"
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [
-    {
-      "key": "isVisible"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "0.875rem",
   "fontStyle": "",
   "isLoading": false,
-  "isVisible": "{{ !SecondReview.currentContract?.first_reviewed_by }}",
+  "isVisible": true,
   "key": "sb9c9wvwdy",
   "leftColumn": 38,
   "maxDynamicHeight": 9000,
@@ -48,7 +44,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldTruncate": false,
-  "text": "⚠️ Missing First Review",
+  "text": "{{!SecondReview.currentContract?.first_reviewed_by ? '⚠️ Missing First Review' : ''}}",
   "textAlign": "RIGHT",
   "textColor": "#b33d0a",
   "topRow": 7,
