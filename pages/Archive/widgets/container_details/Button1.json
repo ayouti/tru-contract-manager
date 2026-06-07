@@ -31,7 +31,7 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": "{{!get_shipment_details.data || get_shipment_details.data.length===0 || get_shipment_details.data.some(row => row.pn_revision_id === null || row.pn_revision_id === \"\") }}",
+  "isDisabled": "{{ \n  !get_shipment_details.data || \n  get_shipment_details.data.length === 0 || \n  get_shipment_details.data.some(row => !row.pn_revision_id || !row.second_review_date) \n}}",
   "isLoading": false,
   "isVisible": true,
   "key": "acq62clgl0",

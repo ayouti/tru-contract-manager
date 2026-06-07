@@ -1,0 +1,1 @@
+SELECT * FROM production.received_contracts LIMIT 1
