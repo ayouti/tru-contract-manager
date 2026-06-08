@@ -51,16 +51,23 @@ export default {
 	},
 
 	toggleIssue(issueObj) {
-		const existsIndex = this.selectedIssues.findIndex(i =>
-																											i.category === issueObj.category &&
-																											i.subcategory === issueObj.subcategory &&
-																											i.issue === issueObj.issue
-																										 );
+		// Structural sanitization: cherry-pick exact schema requirements
+		const cleanIssue = {
+			issue: issueObj.issue,
+			category: issueObj.category,
+			subcategory: issueObj.subcategory,
+			severity: issueObj.severity
+		};
 
+		const existsIndex = this.selectedIssues.findIndex(i =>
+																											i.category === cleanIssue.category &&
+																											i.subcategory === cleanIssue.subcategory &&
+																											i.issue === cleanIssue.issue
+																										 );
 		if (existsIndex > -1) {
 			this.selectedIssues.splice(existsIndex, 1);
 		} else {
-			this.selectedIssues.push(issueObj);
+			this.selectedIssues.push(cleanIssue);
 			if (chk_2ndNoDiscrepancies.isChecked) resetWidget('chk_2ndNoDiscrepancies', true);
 		}
 	},
