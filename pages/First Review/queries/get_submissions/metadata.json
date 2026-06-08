@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT loan_application_id, customer_name, agent_name, first_review_date, first_review_discrepancies, status, first_review_override_by\n, shipment_received_date\nFROM production.received_contracts\nWHERE first_reviewed_by = {{appsmith.user.email}}\n  AND (\n    first_review_shift_id IS NULL \n    OR first_review_shift_id = (\n      SELECT shift_id FROM production.contract_shifts WHERE status = 'OPEN' AND shift_type = 'FIRST_REVIEW' ORDER BY shift_id DESC LIMIT 1\n    )\n  )\nORDER BY first_review_date DESC;",
+      "body": "SELECT loan_application_id, customer_name, agent_name, first_review_date, first_review_discrepancies, status, first_review_override_by\n, shipment_received_date\nFROM production.received_contracts\nWHERE first_reviewed_by = 'israa.ahmed@trufinance.app'--{{appsmith.user.email}}\n  AND (\n    first_review_shift_id IS NULL \n    OR first_review_shift_id = (\n      SELECT shift_id FROM production.contract_shifts WHERE status = 'OPEN' AND shift_type = 'FIRST_REVIEW' ORDER BY shift_id DESC LIMIT 1\n    )\n  )\n\tAND NOT status ILIKE 'IN_PROGRESS%' \nORDER BY first_review_date DESC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

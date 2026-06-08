@@ -1,11 +1,12 @@
 SELECT loan_application_id, customer_name, agent_name, first_review_date, first_review_discrepancies, status, first_review_override_by
 , shipment_received_date
 FROM production.received_contracts
-WHERE first_reviewed_by = {{appsmith.user.email}}
+WHERE first_reviewed_by = 'israa.ahmed@trufinance.app'--{{appsmith.user.email}}
   AND (
     first_review_shift_id IS NULL 
     OR first_review_shift_id = (
       SELECT shift_id FROM production.contract_shifts WHERE status = 'OPEN' AND shift_type = 'FIRST_REVIEW' ORDER BY shift_id DESC LIMIT 1
     )
   )
+	AND NOT status ILIKE 'IN_PROGRESS%' 
 ORDER BY first_review_date DESC;
