@@ -31,12 +31,25 @@ export default {
 	},
 
 	archiveShipment : async () => {
+		// Client-side validation
+		const contracts = get_shipment_details.data || [];
+		const hasInvalidContracts = contracts.some(row => 
+																							 !row.pn_revision_id || 
+																							 row.pn_revision_id === "" || 
+																							 !row.second_review_date
+																							);
+
+		if (hasInvalidContracts) {
+			showAlert("Cannot archive: Shipment contains unreviewed contracts or missing PN Revision IDs", "error");
+			return;
+		}
+
 		showAlert("Removing shipment from drawer... Please wait.", "info");
 
-		// 2. Call API
+		// Call API
 		await archive_shipment.run({
 			shipmentNumber: table_shipments.selectedRow.shipment_number,
-			drawerNumber: table_shipments.selectedRow.drawer_number // Added this line
+			drawerNumber: table_shipments.selectedRow.drawer_number
 		});
 
 		await get_shipments.run();
