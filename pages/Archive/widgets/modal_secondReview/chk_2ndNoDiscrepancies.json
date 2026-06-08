@@ -4,7 +4,7 @@
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 11,
-  "defaultCheckedState": "{{ SecondReview.currentContract?.status === 'REVIEWED_2ND' && SecondReview.selectedIssues.length === 0 }}",
+  "defaultCheckedState": "{{ SecondReview.selectedIssues.length === 0 }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

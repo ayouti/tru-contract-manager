@@ -33,4 +33,8 @@ DO UPDATE SET
     shipment_number = EXCLUDED.shipment_number,
     drawer_number = EXCLUDED.drawer_number,
     comment = EXCLUDED.comment,
-    status = 'RECEIVED'; -- Move it to the next stage
+		status = CASE -- Move it to the next stage
+				WHEN status = 'IN_PROGRESS_1ST' THEN 'IN_PROGRESS_1ST_RECEIVED'
+				WHEN status = 'IN_PROGRESS_1ST_RECEIVED' THEN 'IN_PROGRESS_1ST_RECEIVED' -- Crucial guard (prevents race condition if contract is received while locked for first review)
+				ELSE 'RECEIVED'
+		END;

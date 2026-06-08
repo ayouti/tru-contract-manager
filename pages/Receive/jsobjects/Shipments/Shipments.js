@@ -55,7 +55,7 @@ export default {
 			});
 
 			// 2. Call the new Postgres query and pass the rows
-			await new_finalize_shipment.run({ rows: JSON.stringify(rowsArray) });
+			await finalize_shipment.run({ rows: JSON.stringify(rowsArray) });
 
 			// Set the flash flag, reset (for the backup), then refresh the page
 			await storeValue('flash_submit_success', true);
