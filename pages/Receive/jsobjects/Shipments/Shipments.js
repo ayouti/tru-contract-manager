@@ -69,8 +69,9 @@ export default {
 			//const errorMessage = error.message ? error.message : JSON.stringify(error);
 			//showAlert(`Error: ${errorMessage}`, 'error'); 
 		}
-	},
+	}
 
+	/*
 	submitShipment_old: async () => {
 		try {
 			// 1. Create the array of rows for the KPIs Google Sheet
@@ -95,5 +96,5 @@ export default {
 		} catch (error) {
 			showAlert('Error: One or more contracts failed to update!', 'error');
 		}
-	}
+	} */
 }

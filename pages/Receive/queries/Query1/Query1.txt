@@ -1,9 +1,14 @@
-UPDATE production.received_contracts
-SET 
-    status = 'REVIEWED_2ND',
-    second_review_date = shipment_received_date,
-    second_reviewed_by = 'SYSTEM_MIGRATION',
-    second_review_discrepancies = '[]'::jsonb
-WHERE status = 'RECEIVED'
-  AND shipment_number IS NOT NULL
-  AND shipment_received_date < '2026-05-01';
+SELECT *
+FROM production.received_contracts
+WHERE customer_national_id IN (
+  '30008251601793',
+  '28401031501385',
+  '28910011600257',
+  '27812261601041',
+  '28804261702417',
+  '27306171600212',
+  '29907011703318',
+  '29106061500792',
+  '27508261600256',
+  '29404011600931'
+);

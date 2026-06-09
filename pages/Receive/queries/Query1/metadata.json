@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE production.received_contracts\nSET \n    status = 'REVIEWED_2ND',\n    second_review_date = shipment_received_date,\n    second_reviewed_by = 'SYSTEM_MIGRATION',\n    second_review_discrepancies = '[]'::jsonb\nWHERE status = 'RECEIVED'\n  AND shipment_number IS NOT NULL\n  AND shipment_received_date < '2026-05-01';",
+      "body": "SELECT *\nFROM production.received_contracts\nWHERE customer_national_id IN (\n  '30008251601793',\n  '28401031501385',\n  '28910011600257',\n  '27812261601041',\n  '28804261702417',\n  '27306171600212',\n  '29907011703318',\n  '29106061500792',\n  '27508261600256',\n  '29404011600931'\n);",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
