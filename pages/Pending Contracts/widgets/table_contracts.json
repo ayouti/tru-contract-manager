@@ -122,37 +122,13 @@
       "key": "primaryColumns.drawer_number.computedValue"
     },
     {
-      "key": "primaryColumns.customer_name.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.phone_number.isCellVisible"
-    },
-    {
       "key": "primaryColumns.drawer_number.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.is_agent_active.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.agent_name.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.activation_merchant_branch.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.loan_application_id.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.approval_date.isCellVisible"
     },
     {
       "key": "primaryColumns.received_by.computedValue"
     },
     {
       "key": "primaryColumns.shipment_received_date.computedValue"
-    },
-    {
-      "key": "primaryColumns.application_limit.isCellVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -160,31 +136,7 @@
       "key": "primaryColumns.application_limit.currencyCode"
     },
     {
-      "key": "primaryColumns.customer_name.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.phone_number.isCellVisible"
-    },
-    {
       "key": "primaryColumns.drawer_number.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.is_agent_active.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.agent_name.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.activation_merchant_branch.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.loan_application_id.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.approval_date.isCellVisible"
-    },
-    {
-      "key": "primaryColumns.application_limit.isCellVisible"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -264,7 +216,7 @@
       "id": "activation_merchant_branch",
       "index": 10,
       "isCellEditable": false,
-      "isCellVisible": "{{(() => { const tableData = table_contracts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Auth.isSupervisor())) : Auth.isSupervisor() })()}}",
+      "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -332,7 +284,7 @@
       "id": "agent_name",
       "index": 7,
       "isCellEditable": false,
-      "isCellVisible": "{{(() => { const tableData = table_contracts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Auth.isSupervisor())) : Auth.isSupervisor() })()}}",
+      "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -367,7 +319,7 @@
       "id": "application_limit",
       "index": 3,
       "isCellEditable": false,
-      "isCellVisible": "{{(() => { const tableData = table_contracts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Auth.isSupervisor())) : Auth.isSupervisor() })()}}",
+      "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -435,7 +387,6 @@
       "id": "approval_date",
       "index": 1,
       "isCellEditable": false,
-      "isCellVisible": "{{(() => { const tableData = table_contracts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Auth.isSupervisor())) : Auth.isSupervisor() })()}}",
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -503,7 +454,7 @@
       "id": "customer_name",
       "index": 6,
       "isCellEditable": false,
-      "isCellVisible": "{{(() => { const tableData = table_contracts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Auth.isSupervisor())) : Auth.isSupervisor() })()}}",
+      "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -571,7 +522,6 @@
       "id": "is_agent_active",
       "index": 11,
       "isCellEditable": false,
-      "isCellVisible": "{{(() => { const tableData = table_contracts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Auth.isSupervisor())) : Auth.isSupervisor() })()}}",
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -605,7 +555,7 @@
       "id": "loan_application_id",
       "index": 0,
       "isCellEditable": false,
-      "isCellVisible": "{{(() => { const tableData = table_contracts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (!Auth.isSupervisor())) : !Auth.isSupervisor() })()}}",
+      "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -639,7 +589,7 @@
       "id": "phone_number",
       "index": 5,
       "isCellEditable": false,
-      "isCellVisible": "{{(() => { const tableData = table_contracts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Auth.isSupervisor())) : Auth.isSupervisor() })()}}",
+      "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,

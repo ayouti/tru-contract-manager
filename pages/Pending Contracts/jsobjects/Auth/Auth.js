@@ -18,9 +18,5 @@ export default {
 		const data = get_user_permissions.data;
 		if (!data || data.length === 0) return [];
 		return data[0].permissions || [];
-	},
-
-	isSupervisor: () => {
-		return Auth.getPermissions().includes('supervisor');
 	}
 }
