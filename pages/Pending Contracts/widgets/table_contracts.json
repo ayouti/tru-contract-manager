@@ -483,6 +483,7 @@
       "id": "drawer_number",
       "index": 13,
       "isCellEditable": false,
+      "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
