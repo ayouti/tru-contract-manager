@@ -387,6 +387,7 @@
       "id": "approval_date",
       "index": 1,
       "isCellEditable": false,
+      "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
