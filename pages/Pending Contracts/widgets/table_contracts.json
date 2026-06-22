@@ -122,9 +122,6 @@
       "key": "primaryColumns.drawer_number.computedValue"
     },
     {
-      "key": "primaryColumns.drawer_number.isCellVisible"
-    },
-    {
       "key": "primaryColumns.received_by.computedValue"
     },
     {
@@ -134,9 +131,6 @@
   "dynamicPropertyPathList": [
     {
       "key": "primaryColumns.application_limit.currencyCode"
-    },
-    {
-      "key": "primaryColumns.drawer_number.isCellVisible"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -489,7 +483,6 @@
       "id": "drawer_number",
       "index": 13,
       "isCellEditable": false,
-      "isCellVisible": "{{(() => { const tableData = table_contracts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Auth.isSupervisor())) : Auth.isSupervisor() })()}}",
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
