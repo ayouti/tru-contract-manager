@@ -5,13 +5,14 @@ SET
     ELSE 'REVIEWED_1ST' 
   END,
   first_review_date = NOW(),
+  first_reviewed_by = {{appsmith.user.email}},
   first_review_discrepancies = {{JSON.stringify(ReviewState.selectedIssues)}}::jsonb,
   
-  -- The Fix: Snap to the open shift, but protect historical closed shifts
   first_review_shift_id = CASE
     WHEN first_review_shift_id IN (SELECT shift_id FROM production.contract_shifts WHERE status != 'OPEN') 
       THEN first_review_shift_id
     ELSE (SELECT shift_id FROM production.contract_shifts WHERE status = 'OPEN' AND shift_type = 'FIRST_REVIEW' ORDER BY shift_id DESC LIMIT 1)
   END
 
-WHERE loan_application_id = {{ReviewState.currentContract.loan_application_id}};
+WHERE loan_application_id = {{ReviewState.currentContract.loan_application_id}}
+  AND first_review_date IS NULL; -- 👈 THE GUARD: Only update if it hasn't been reviewed yet

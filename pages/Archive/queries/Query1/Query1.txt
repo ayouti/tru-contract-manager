@@ -1,1 +1,1 @@
-SELECT loan_application_id FROM production.received_contracts WHERE approval_date IS NULL ORDER BY loan_application_id
+SELECT loan_application_id, first_review_shift_id FROM production.received_contracts WHERE first_review_date >= '2026-06-01' AND first_reviewed_by IS NULL AND NOT first_review_date IS NULL

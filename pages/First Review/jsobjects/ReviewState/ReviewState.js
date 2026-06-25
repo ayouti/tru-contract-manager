@@ -31,9 +31,15 @@ export default {
 		}
 
 		// Execute submission/resubmission
-		await submit_review.run();
-		await get_submissions.run();
-		showAlert(this.isEditing ? 'Changes saved successfully!' : 'Review submitted successfully!', 'success');
+		// Inside handleMainAction()
+		const submitRes = await submit_review.run();
+
+		if (!submitRes || submitRes.length === 0) {
+			showAlert('Someone else already reviewed this contract while you were inactive. Moving to next.', 'warning');
+		} else {
+			await get_submissions.run();
+			showAlert(this.isEditing ? 'Changes saved successfully!' : 'Review submitted successfully!', 'success');
+		}
 
 		// Reset working states
 		this.selectedIssues = [];
@@ -98,7 +104,7 @@ export default {
 			// giving the agent a chance to breathe before clicking "Get Contract" again.
 		}
 	},
-	
+
 	toggleIssue(issueObj) {
 		const existsIndex = this.selectedIssues.findIndex(i =>
 																											i.category === issueObj.category &&
