@@ -139,6 +139,9 @@
       "key": "primaryColumns.customColumn2.menuItems.menuItems6k0rp5lh2.iconName"
     },
     {
+      "key": "primaryColumns.customColumn2.menuItems.menuItemp0h8xo0grj.isVisible"
+    },
+    {
       "key": "primaryColumns.customColumn2.menuButtoniconName"
     },
     {
@@ -178,6 +181,9 @@
     },
     {
       "key": "primaryColumns.customColumn2.menuItems.menuItems6k0rp5lh2.iconName"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItemp0h8xo0grj.isVisible"
     },
     {
       "key": "primaryColumns.customColumn2.menuButtoniconName"
@@ -627,7 +633,7 @@
           "id": "menuItemp0h8xo0grj",
           "index": 1,
           "isDisabled": false,
-          "isVisible": true,
+          "isVisible": "{{table_stagedShipment.processedTableData.map((currentRow) => ( currentRow.comment !== 'PN - Amended' ))}}",
           "label": "PN - Amended",
           "iconName": "{{table_stagedShipment.processedTableData.map((currentRow) => ( currentRow.comment === 'PN - Amended' ? 'tick' : 'blank' ))}}",
           "iconAlign": "left",
