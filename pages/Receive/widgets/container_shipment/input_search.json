@@ -67,7 +67,7 @@
   "parentId": "wmy6e0b004",
   "parentRowSpace": 10,
   "placeholderText": "Scan bar code, or enter NID or mobile #:",
-  "regex": "^\\d*$",
+  "regex": "^([CcPp]-)?\\d*$",
   "renderMode": "CANVAS",
   "resetOnSubmit": false,
   "responsiveBehavior": "fill",

@@ -50,7 +50,8 @@ export default {
 
 					shipment_number: this.details.shipmentNumber,
 					drawer_number: input_drawerNumber.text,
-					comment: contract.comment
+					comment: contract.comment,
+					contract_type: contract.contract_type || 'HANDWRITTEN'
 				};
 			});
 

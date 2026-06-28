@@ -172,7 +172,7 @@ export default {
 	},
 
 	/* Clears the filteredList on success or warning. */
-	addContractByPk: (pk) => {
+	addContractByPk: (pk, contractType, initialComment) => {
 		const contract = this.contractMap[String(pk)];
 
 		if (!contract) {
@@ -192,8 +192,9 @@ export default {
 		// Create a new object with the contract data + our new fields
 		const newStagedItem = {
 			...contract,
-			comment: null, // Default comment
-			addedTime: moment().toISOString() 
+			comment: initialComment || null,              // Barcode first-scan sets the "missing half" flag; legacy adds stay null
+			contract_type: contractType || 'HANDWRITTEN', // PREFILLED for barcoded contracts, HANDWRITTEN for legacy
+			addedTime: moment().toISOString()
 		};
 
 		this.stagedContracts.push(newStagedItem);
@@ -201,7 +202,7 @@ export default {
 		this.persistBackup();
 		input_search.setValue('');
 		text_help.setText('');
-		this.filteredList = []; 
+		this.filteredList = [];
 	},
 
 	removeContract: (pk) => {
@@ -213,21 +214,56 @@ export default {
 	},
 
 	processInput: () => {
-		const matches = this.filteredList; 
+		const raw = input_search.text;
+
+		// --- BARCODE PATH: prefilled contracts carry a "C-"/"P-" prefix (C = Contract page, P = PN page) ---
+		const barcode = raw ? raw.match(/^([CcPp])-0*(\d+)$/) : null;
+		if (barcode) {
+			this.handleBarcode(barcode[1].toUpperCase(), barcode[2]); // docType ('C'|'P'), loan id with leading zeros stripped
+			resetWidget("input_search", true);
+			return;
+		}
+
+		// --- LEGACY PATH: handwritten contracts entered by loan ID / NID / mobile ---
+		const matches = this.filteredList;
 
 		if (matches.length === 1) {
 			// Case A: Single partial match. Add it.
-			this.addContractByPk(matches[0].loan_application_id); 
+			this.addContractByPk(matches[0].loan_application_id, 'HANDWRITTEN');
 			resetWidget("input_search", true);
 		} else if (matches.length > 1) {
 			// Case B: Multiple partial matches. Warn.
 			showAlert("Multiple matches found. Please select from the list.", "info");
 		} else { // matches.length === 0
 			// Case C: No partial matches found.
-			// Assume it's a barcode PK and try to add it.
-			this.addContractByPk(input_search.text);
+			// Assume it's a raw loan ID and try to add it.
+			this.addContractByPk(raw, 'HANDWRITTEN');
 			resetWidget("input_search", true);
 		}
+	},
+
+	/* Barcode scan of a prefilled contract. The first page of the pair adds the contract with a
+	   "missing half" flag; the second page scanned anywhere later in the same shipment clears it.
+	   Per spec the second scan always clears the comment (we don't track C vs P separately). */
+	handleBarcode: (docType, pk) => {
+		const existing = this.stagedContracts.find(c => String(c.loan_application_id) === String(pk));
+
+		if (existing) {
+			if (existing.comment) {
+				existing.comment = null; // pair now complete
+				this.persistBackup();
+				showAlert(`Pair complete: ${existing.customer_name}`, 'success');
+			} else {
+				showAlert('Warning: Contract already complete in this shipment.', 'warning');
+			}
+			text_help.setText('');
+			this.filteredList = [];
+			return;
+		}
+
+		// First scan → add with the appropriate "missing half" flag.
+		const flag = (docType === 'C') ? 'Contract w/o PN' : 'PN w/o Contract';
+		this.addContractByPk(pk, 'PREFILLED', flag);
 	},
 
 	updateComment: (pk, comment) => {
