@@ -24,10 +24,6 @@
         "value": "0"
       },
       {
-        "name": "commentOptions",
-        "value": "[\"PN - Limit Increase\", \"PN - Amended\", \"PN w/o Contract\", \"Contract w/o PN\"]"
-      },
-      {
         "name": "filterTimer",
         "value": "null"
       },

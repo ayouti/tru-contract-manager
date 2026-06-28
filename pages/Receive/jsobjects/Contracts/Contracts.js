@@ -2,13 +2,7 @@ export default {
 	stagedContracts: [],	// Holds contracts added in this batch
 	filteredList: [],			// Hold our filter results for instant access
 	contractMap: {}, 			// Hold the lookup map
-	matchCount: 0, 
-	commentOptions: [
-		"PN - Limit Increase",
-		"PN - Amended",
-		"PN w/o Contract",
-		"Contract w/o PN"
-	],
+	matchCount: 0,
 
 	// --- 1. STATE VARIABLES ---
 	filterTimer: null,     // Stores the timer ID
