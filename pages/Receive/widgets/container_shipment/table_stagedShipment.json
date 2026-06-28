@@ -127,10 +127,16 @@
       "key": "primaryColumns.addedTime.computedValue"
     },
     {
-      "key": "primaryColumns.customColumn2.sourceData"
+      "key": "primaryColumns.customColumn2.menuItems.menuItembmhbkr4dau.iconName"
     },
     {
-      "key": "primaryColumns.customColumn2.configureMenuItems.config.label"
+      "key": "primaryColumns.customColumn2.menuItems.menuItemp0h8xo0grj.iconName"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItemupz4nl5n7g.iconName"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItems6k0rp5lh2.iconName"
     },
     {
       "key": "primaryColumns.customColumn2.menuButtoniconName"
@@ -147,10 +153,19 @@
       "key": "primaryColumns.customColumn1.onClick"
     },
     {
-      "key": "primaryColumns.customColumn2.configureMenuItems.config.onClick"
+      "key": "primaryColumns.customColumn2.menuItems.menuItembmhbkr4dau.onClick"
     },
     {
-      "key": "primaryColumns.customColumn2.menuColor"
+      "key": "primaryColumns.customColumn2.menuItems.menuItemp0h8xo0grj.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItemupz4nl5n7g.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItems6k0rp5lh2.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItemg8zw5n1hip.onClick"
     },
     {
       "key": "primaryColumns.customColumn2.menuButtoniconName"
@@ -161,7 +176,19 @@
       "key": "primaryColumns.customColumn1.onClick"
     },
     {
-      "key": "primaryColumns.customColumn2.configureMenuItems.config.onClick"
+      "key": "primaryColumns.customColumn2.menuItems.menuItembmhbkr4dau.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItemp0h8xo0grj.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItemupz4nl5n7g.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItems6k0rp5lh2.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItemg8zw5n1hip.onClick"
     }
   ],
   "enableClientSideSearch": true,
@@ -549,17 +576,6 @@
       "cellBackground": "",
       "columnType": "menuButton",
       "computedValue": "",
-      "configureMenuItems": {
-        "config": {
-          "id": "config",
-          "isDisabled": false,
-          "isVisible": true,
-          "label": "{{table_stagedShipment.processedTableData.map((currentRow, currentRowIndex) => {\n        let primaryColumnData = [];\n\n        if (table_stagedShipment.primaryColumns.customColumn2.sourceData[currentRowIndex].length) {\n          primaryColumnData = table_stagedShipment.primaryColumns.customColumn2.sourceData[currentRowIndex];\n        } else if (table_stagedShipment.primaryColumns.customColumn2.sourceData.length) {\n          primaryColumnData = table_stagedShipment.primaryColumns.customColumn2.sourceData;\n        }\n\n        return primaryColumnData.map((currentItem, currentIndex) => currentItem.label);});}}",
-          "onClick": "{{Contracts.updateComment(table_stagedShipment.triggeredRow.loan_application_id, currentItem.value)}}"
-        },
-        "id": "config",
-        "label": "Configure menu items"
-      },
       "currencyCode": "USD",
       "customAlias": "",
       "decimals": 0,
@@ -584,6 +600,50 @@
       "menuButtoniconName": "{{table_stagedShipment.processedTableData.map((currentRow, currentIndex) => ( currentRow.comment===null ? 'more' : 'comment' ))}}",
       "menuColor": "",
       "menuItems": {
+        "menuItembmhbkr4dau": {
+          "id": "menuItembmhbkr4dau",
+          "index": 0,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "PN - Limit Increase",
+          "iconName": "{{ currentRow.comment === 'PN - Limit Increase' ? 'tick' : '' }}",
+          "iconAlign": "left",
+          "onClick": "{{ Contracts.updateComment(table_stagedShipment.triggeredRow.loan_application_id, 'PN - Limit Increase') }}",
+          "widgetId": "h993mtqv1n"
+        },
+        "menuItemp0h8xo0grj": {
+          "id": "menuItemp0h8xo0grj",
+          "index": 1,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "PN - Amended",
+          "iconName": "{{ currentRow.comment === 'PN - Amended' ? 'tick' : '' }}",
+          "iconAlign": "left",
+          "onClick": "{{ Contracts.updateComment(table_stagedShipment.triggeredRow.loan_application_id, 'PN - Amended') }}",
+          "widgetId": "2kgx190jgq"
+        },
+        "menuItemupz4nl5n7g": {
+          "id": "menuItemupz4nl5n7g",
+          "index": 2,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "PN w/o Contract",
+          "iconName": "{{ currentRow.comment === 'PN w/o Contract' ? 'tick' : '' }}",
+          "iconAlign": "left",
+          "onClick": "{{ Contracts.updateComment(table_stagedShipment.triggeredRow.loan_application_id, 'PN w/o Contract') }}",
+          "widgetId": "nm3b4xw25o"
+        },
+        "menuItems6k0rp5lh2": {
+          "id": "menuItems6k0rp5lh2",
+          "index": 3,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "Contract w/o PN",
+          "iconName": "{{ currentRow.comment === 'Contract w/o PN' ? 'tick' : '' }}",
+          "iconAlign": "left",
+          "onClick": "{{ Contracts.updateComment(table_stagedShipment.triggeredRow.loan_application_id, 'Contract w/o PN') }}",
+          "widgetId": "7extjlw0fr"
+        },
         "menuItem1rypuxux0p": {
           "id": "menuItem1rypuxux0p",
           "index": 4,
@@ -592,52 +652,23 @@
           "label": "----",
           "widgetId": "5grr4f7x3e"
         },
-        "menuItembmhbkr4dau": {
-          "id": "menuItembmhbkr4dau",
-          "index": 0,
-          "isDisabled": false,
-          "isVisible": true,
-          "label": "PN - Limit Increase",
-          "widgetId": "h993mtqv1n"
-        },
         "menuItemg8zw5n1hip": {
           "id": "menuItemg8zw5n1hip",
           "index": 5,
           "isDisabled": false,
           "isVisible": true,
-          "label": "Remove ❌",
+          "label": "Remove comment",
+          "iconName": "trash",
+          "iconAlign": "left",
+          "iconColor": "#DC2626",
+          "onClick": "{{ Contracts.updateComment(table_stagedShipment.triggeredRow.loan_application_id, 'DELETE') }}",
           "widgetId": "4x5u03bmbe"
-        },
-        "menuItemp0h8xo0grj": {
-          "id": "menuItemp0h8xo0grj",
-          "index": 1,
-          "isDisabled": false,
-          "isVisible": true,
-          "label": "PN - Amended",
-          "widgetId": "2kgx190jgq"
-        },
-        "menuItems6k0rp5lh2": {
-          "id": "menuItems6k0rp5lh2",
-          "index": 3,
-          "isDisabled": false,
-          "isVisible": true,
-          "label": "Contract w/o PN",
-          "widgetId": "7extjlw0fr"
-        },
-        "menuItemupz4nl5n7g": {
-          "id": "menuItemupz4nl5n7g",
-          "index": 2,
-          "isDisabled": false,
-          "isVisible": true,
-          "label": "PN w/o Contract",
-          "widgetId": "nm3b4xw25o"
         }
       },
-      "menuItemsSource": "DYNAMIC",
+      "menuItemsSource": "STATIC",
       "menuVariant": "TERTIARY",
       "notation": "standard",
       "originalId": "customColumn2",
-      "sourceData": "{{table_stagedShipment.processedTableData.map((currentRow, currentIndex) => ( \n(() => {\n\tconst options = Contracts.commentOptions.map(comment => {\n\t\treturn {\n\t\t\t\"label\": `${comment}${(currentRow.comment === comment) ? ' ✅' : ''}`,\n\t\t\t\"value\": comment\n\t\t};\n\t});\n\n\treturn [\n\t\t...options,\n\t\t{ \"label\": \"----\", \"value\": \"DIVIDER\" },\n\t\t{ \"label\": \"Remove Comment ❌\", \"value\": \"DELETE\" }\n\t];\n})()\n))}}",
       "sticky": "left",
       "textSize": "0.875rem",
       "thousandSeparator": true,
