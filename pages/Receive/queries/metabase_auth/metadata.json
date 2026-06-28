@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n\"username\": \"agent@trufinance.app\",\n\"password\": \"Agent@007\"\n}",
+      "body": "{\n\"username\": \"xxxxxxxx\",\n\"password\": \"xxxxxxxx\"\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
