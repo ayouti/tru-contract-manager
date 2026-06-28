@@ -1,3 +1,5 @@
+-- The approval_date >= '2026-06-01' filter is intentional — it is the go-live date and excludes pre-migration records for performance.
+
 UPDATE production.received_contracts
 SET 
   first_reviewed_by = {{appsmith.user.email}},
