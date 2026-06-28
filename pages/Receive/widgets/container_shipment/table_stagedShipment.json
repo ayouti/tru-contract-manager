@@ -168,6 +168,18 @@
       "key": "primaryColumns.customColumn2.menuItems.menuItemg8zw5n1hip.onClick"
     },
     {
+      "key": "primaryColumns.customColumn2.menuItems.menuItembmhbkr4dau.iconName"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItemp0h8xo0grj.iconName"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItemupz4nl5n7g.iconName"
+    },
+    {
+      "key": "primaryColumns.customColumn2.menuItems.menuItems6k0rp5lh2.iconName"
+    },
+    {
       "key": "primaryColumns.customColumn2.menuButtoniconName"
     }
   ],
@@ -606,7 +618,7 @@
           "isDisabled": false,
           "isVisible": true,
           "label": "PN - Limit Increase",
-          "iconName": "{{ currentRow.comment === 'PN - Limit Increase' ? 'tick' : '' }}",
+          "iconName": "{{table_stagedShipment.processedTableData.map((currentRow) => ( currentRow.comment === 'PN - Limit Increase' ? 'tick' : 'blank' ))}}",
           "iconAlign": "left",
           "onClick": "{{ Contracts.updateComment(table_stagedShipment.triggeredRow.loan_application_id, 'PN - Limit Increase') }}",
           "widgetId": "h993mtqv1n"
@@ -617,7 +629,7 @@
           "isDisabled": false,
           "isVisible": true,
           "label": "PN - Amended",
-          "iconName": "{{ currentRow.comment === 'PN - Amended' ? 'tick' : '' }}",
+          "iconName": "{{table_stagedShipment.processedTableData.map((currentRow) => ( currentRow.comment === 'PN - Amended' ? 'tick' : 'blank' ))}}",
           "iconAlign": "left",
           "onClick": "{{ Contracts.updateComment(table_stagedShipment.triggeredRow.loan_application_id, 'PN - Amended') }}",
           "widgetId": "2kgx190jgq"
@@ -628,7 +640,7 @@
           "isDisabled": false,
           "isVisible": true,
           "label": "PN w/o Contract",
-          "iconName": "{{ currentRow.comment === 'PN w/o Contract' ? 'tick' : '' }}",
+          "iconName": "{{table_stagedShipment.processedTableData.map((currentRow) => ( currentRow.comment === 'PN w/o Contract' ? 'tick' : 'blank' ))}}",
           "iconAlign": "left",
           "onClick": "{{ Contracts.updateComment(table_stagedShipment.triggeredRow.loan_application_id, 'PN w/o Contract') }}",
           "widgetId": "nm3b4xw25o"
@@ -639,7 +651,7 @@
           "isDisabled": false,
           "isVisible": true,
           "label": "Contract w/o PN",
-          "iconName": "{{ currentRow.comment === 'Contract w/o PN' ? 'tick' : '' }}",
+          "iconName": "{{table_stagedShipment.processedTableData.map((currentRow) => ( currentRow.comment === 'Contract w/o PN' ? 'tick' : 'blank' ))}}",
           "iconAlign": "left",
           "onClick": "{{ Contracts.updateComment(table_stagedShipment.triggeredRow.loan_application_id, 'Contract w/o PN') }}",
           "widgetId": "7extjlw0fr"
@@ -650,6 +662,8 @@
           "isDisabled": true,
           "isVisible": true,
           "label": "----",
+          "iconName": "blank",
+          "iconAlign": "left",
           "widgetId": "5grr4f7x3e"
         },
         "menuItemg8zw5n1hip": {
