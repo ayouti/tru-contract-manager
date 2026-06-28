@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6904abf885bff76d9e2e3f75_9f5bc452-b0d8-4d36-8006-ca5e3c4c58ba",
-  "id": "Receive_Contracts.addContractByPk",
+  "gitSyncId": "6904abf885bff76d9e2e3f75_5eb48d02-b36d-4e84-b915-3f0c530ceb9c",
+  "id": "Receive_Contracts.handleBarcode",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,13 +8,10 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
+          "name": "docType"
+        },
+        {
           "name": "pk"
-        },
-        {
-          "name": "contractType"
-        },
-        {
-          "name": "initialComment"
         }
       ],
       "paginationType": "NONE",
@@ -32,8 +29,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "Contracts.addContractByPk",
-    "name": "addContractByPk",
+    "fullyQualifiedName": "Contracts.handleBarcode",
+    "name": "handleBarcode",
     "pageId": "Receive",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
