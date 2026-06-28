@@ -116,7 +116,7 @@
   "onItemClick": "{{ Contracts.addContractByPk(currentItem.loan_application_id) }}",
   "originalBottomRow": 66,
   "originalTopRow": 11,
-  "pageSize": 6,
+  "pageSize": 4,
   "parentColumnSpace": 11.6875,
   "parentId": "wmy6e0b004",
   "parentRowSpace": 10,
