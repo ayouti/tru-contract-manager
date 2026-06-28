@@ -172,7 +172,7 @@ export default {
 	},
 
 	/* Clears the filteredList on success or warning. */
-	addContractByPk: (pk, contractType, initialComment) => {
+	addContractByPk: (pk, contractType, initialComment, scannedDocs) => {
 		const contract = this.contractMap[String(pk)];
 
 		if (!contract) {
@@ -194,6 +194,7 @@ export default {
 			...contract,
 			comment: initialComment || null,              // Barcode first-scan sets the "missing half" flag; legacy adds stay null
 			contract_type: contractType || 'HANDWRITTEN', // PREFILLED for barcoded contracts, HANDWRITTEN for legacy
+			scannedDocs: scannedDocs || null,             // { C, P } page-presence tracker for barcoded contracts; null for legacy
 			addedTime: moment().toISOString()
 		};
 
@@ -242,28 +243,42 @@ export default {
 		}
 	},
 
-	/* Barcode scan of a prefilled contract. The first page of the pair adds the contract with a
-	   "missing half" flag; the second page scanned anywhere later in the same shipment clears it.
-	   Per spec the second scan always clears the comment (we don't track C vs P separately). */
+	/* Barcode scan of a prefilled contract. Each contract is two pages (C = Contract, P = PN)
+	   tracked separately in scannedDocs so a re-scan of the SAME page is rejected and only the
+	   genuine complementary page completes the pair and clears the flag. */
 	handleBarcode: (docType, pk) => {
 		const existing = this.stagedContracts.find(c => String(c.loan_application_id) === String(pk));
 
 		if (existing) {
-			if (existing.comment) {
-				existing.comment = null; // pair now complete
+			if (!existing.scannedDocs) {
+				// Added some other way (e.g. legacy search) — not a barcode pair we track.
+				showAlert('Warning: Contract already in this shipment.', 'warning');
+			} else if (existing.scannedDocs[docType]) {
+				// Same physical page scanned twice — do NOT treat as a complete pair.
+				const page = (docType === 'C') ? 'Contract' : 'PN';
+				const missing = (docType === 'C') ? 'PN' : 'Contract';
+				showAlert(`Warning: ${page} page already scanned — ${missing} page still needed.`, 'warning');
+			} else {
+				// Genuine complementary page → pair is now complete.
+				existing.scannedDocs[docType] = true;
+				existing.comment = this.deriveComment(existing.scannedDocs);
 				this.persistBackup();
 				showAlert(`Pair complete: ${existing.customer_name}`, 'success');
-			} else {
-				showAlert('Warning: Contract already complete in this shipment.', 'warning');
 			}
 			text_help.setText('');
 			this.filteredList = [];
 			return;
 		}
 
-		// First scan → add with the appropriate "missing half" flag.
-		const flag = (docType === 'C') ? 'Contract w/o PN' : 'PN w/o Contract';
-		this.addContractByPk(pk, 'PREFILLED', flag);
+		// First page of a new pair → add the contract with the appropriate "missing half" flag.
+		const scannedDocs = { C: docType === 'C', P: docType === 'P' };
+		this.addContractByPk(pk, 'PREFILLED', this.deriveComment(scannedDocs), scannedDocs);
+	},
+
+	// Derives the staged comment from which pages have been scanned. Both present → no flag.
+	deriveComment: (scannedDocs) => {
+		if (scannedDocs.C && scannedDocs.P) return null;
+		return scannedDocs.C ? 'Contract w/o PN' : 'PN w/o Contract';
 	},
 
 	updateComment: (pk, comment) => {
