@@ -21,8 +21,9 @@ WHERE loan_application_id = (
     ) 
 			AND approval_date >= '2026-06-01'
   ORDER BY
-	
-	approval_date ASC 
+		CASE WHEN status = 'RECEIVED' THEN 0 ELSE 1 END ASC,
+		shipment_received_date ASC NULLS LAST,
+		approval_date ASC 
   LIMIT 1
   FOR UPDATE SKIP LOCKED
 )

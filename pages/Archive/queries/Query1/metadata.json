@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT loan_application_id, first_review_shift_id FROM production.received_contracts WHERE first_review_date >= '2026-06-01' AND first_reviewed_by IS NULL AND NOT first_review_date IS NULL",
+      "body": "SELECT shipment_received_date FROM production.received_contracts LIMIT 1",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
