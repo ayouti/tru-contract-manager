@@ -39,15 +39,15 @@
     "first_reviewed_by",
     "customColumn3",
     "customColumn2",
-    "pn_revision_id",
     "loan_application_id",
     "approval_limit",
     "first_review_discrepancies",
     "second_review_discrepancies",
     "second_review_date",
-    "status"
+    "status",
+    "pn_revision_id"
   ],
-  "columnUpdatedAt": 1780840581129,
+  "columnUpdatedAt": 1782906657662,
   "columnWidthMap": {
     "customColumn1": 60,
     "customColumn3": 114,
@@ -92,9 +92,6 @@
       "key": "primaryColumns.customColumn2.buttonVariant"
     },
     {
-      "key": "primaryColumns.customColumn2.isCellVisible"
-    },
-    {
       "key": "primaryColumns.customColumn2.buttonColor"
     },
     {
@@ -102,9 +99,6 @@
     },
     {
       "key": "primaryColumns.customColumn2.boxShadow"
-    },
-    {
-      "key": "primaryColumns.pn_revision_id.computedValue"
     },
     {
       "key": "primaryColumns.loan_application_id.computedValue"
@@ -132,6 +126,12 @@
     },
     {
       "key": "primaryColumns.status.computedValue"
+    },
+    {
+      "key": "primaryColumns.pn_revision_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.customColumn2.isCellVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -270,7 +270,7 @@
       "id": "customColumn2",
       "index": 7,
       "isCellEditable": false,
-      "isCellVisible": "{{table_shipmentDetails.processedTableData.map((currentRow, currentIndex) => ( currentRow.received_by!=appsmith.user.email))}}",
+      "isCellVisible": "{{(() => { const tableData = table_shipmentDetails.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow.first_reviewed_by!==null)) : currentRow.first_reviewed_by!==null })()}}",
       "isDerived": true,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -498,7 +498,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = table_shipmentDetails.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow[\"pn_revision_id\"])) :  currentRow[\"pn_revision_id\"] })()}}",
+      "computedValue": "{{(() => { const tableData = table_shipmentDetails.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"pn_revision_id\"])) : pn_revision_id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -506,7 +506,7 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "pn_revision_id",
-      "index": 5,
+      "index": 10,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
