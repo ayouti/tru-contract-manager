@@ -20,7 +20,9 @@ WHERE loan_application_id = (
       OR locked_at < NOW() - INTERVAL '10 minutes'
     ) 
 			AND approval_date >= '2026-06-01'
-  ORDER BY approval_date ASC 
+  ORDER BY
+	
+	approval_date ASC 
   LIMIT 1
   FOR UPDATE SKIP LOCKED
 )

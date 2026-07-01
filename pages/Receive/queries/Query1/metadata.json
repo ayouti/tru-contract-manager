@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT *\nFROM production.received_contracts\nWHERE customer_national_id IN (\n  '30008251601793',\n  '28401031501385',\n  '28910011600257',\n  '27812261601041',\n  '28804261702417',\n  '27306171600212',\n  '29907011703318',\n  '29106061500792',\n  '27508261600256',\n  '29404011600931'\n);",
+      "body": "",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
